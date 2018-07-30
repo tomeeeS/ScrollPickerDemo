@@ -1,5 +1,5 @@
 # ScrollPickerDemo
-Demo project to showcase my android [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) custom view
+Demo project to showcase my android [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) custom view.
 
 
 ## Donation
