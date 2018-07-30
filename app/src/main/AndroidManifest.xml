@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.sajti.srollpickerdemo"
+<manifest package="sajti.srollpickerdemo"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".IntListActivity" />
     </application>
 
 </manifest>

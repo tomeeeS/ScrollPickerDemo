@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <data>
+        <import type="java.lang.String" />
 
-</android.support.constraint.ConstraintLayout>
+        <variable
+            name="pickerValue"
+            type="android.databinding.ObservableInt"/>
+        <variable
+            name="isEnabled"
+            type="android.databinding.ObservableBoolean"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/activity_main"
+        android:orientation="vertical">
+
+        <sajti.scroll_picker.ScrollPicker
+            android:id="@+id/picker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:background="@color/pickerBackground"
+            app:selectorColor="@color/selectorColor"
+            app:textSize="22.5"
+            app:value="@={ pickerValue }"
+            app:isEnabled="@{ isEnabled }"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="@{`` + pickerValue }"
+            android:textSize="14pt"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+</layout>
