@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SrollPickerDemo</string>
+    <string name="app_name" translatable="false">SrollPickerDemo</string>
     <string name="action_settings">Settings</string>
 
 
@@ -11,6 +11,9 @@
         <item>purple</item>
         <item>white</item>
         <item>llama color</item>
+        <item>teal</item>
+        <item>black</item>
+        <item>pink</item>
     </string-array>
 
 </resources>
