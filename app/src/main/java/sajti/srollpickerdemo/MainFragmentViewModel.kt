@@ -1,13 +1,15 @@
 package sajti.srollpickerdemo
 
+import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableInt
 
-object MainFragmentViewModel {
-    val pickerValue = ObservableInt( 5 )
-    val isEnabled = ObservableBoolean( true )
+class MainFragmentViewModel : ViewModel() {
+    var pickerValue: ObservableInt = ObservableInt( 5 )
+    var isEnabled: ObservableBoolean = ObservableBoolean( true )
 
     fun setValueTo( valueTo: Int ) {
         pickerValue.set( valueTo )
     }
+
 }

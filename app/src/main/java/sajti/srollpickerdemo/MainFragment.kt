@@ -1,6 +1,8 @@
 package sajti.srollpickerdemo
 
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import sajti.scroll_picker.ScrollPicker
 import sajti.srollpickerdemo.databinding.FragmentMainBinding
+import java.util.*
+
 
 class MainFragment : Fragment() {
 
@@ -16,7 +20,7 @@ class MainFragment : Fragment() {
     lateinit var scrollPicker: ScrollPicker
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
-        val viewModel = MainFragmentViewModel
+        val viewModel = ViewModelProviders.of( this ).get( MainFragmentViewModel::class.java )
 
         val binding = DataBindingUtil.inflate<FragmentMainBinding>( inflater, LAYOUT, container, false).apply {
             setViewModel( viewModel )
@@ -28,21 +32,16 @@ class MainFragment : Fragment() {
                 setList( colors.toCollection( ArrayList() ) )
                 setEnabled( true )
             }
+            selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor( getRandomColor() ) }
+            textColor.setOnClickListener { _ -> scrollPicker.setTextColor( getRandomColor() ) }
         }
 
-
-//        fab.setOnClickListener { _ ->
-//            run {
-//                pickerValue.set( 2 )
-//            }
-//        }
-//        fab2.setOnClickListener { _ ->
-//            run {
-//                val setEnabled = !isEnabled.get()
-//                isEnabled.set( setEnabled )
-//            }
-//        }
         return binding.root
     }
 
+    fun getRandomColor(): Int {
+        val rnd = Random()
+        val color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
+        return color
+    }
 }
