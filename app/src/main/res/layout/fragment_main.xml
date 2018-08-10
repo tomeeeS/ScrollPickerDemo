@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="sajti.srollpickerdemo.MainFragmentViewModel"/>
@@ -20,131 +21,183 @@
             android:id="@+id/picker"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/pickerBackground"
+            app:isEnabled="@{ viewModel.isEnabled }"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".27"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent=".4"
             app:selectorColor="@color/selectorColor"
-            app:textSize="22.5"
-            app:value="@={ viewModel.pickerValue }"
-            app:isEnabled="@{ viewModel.isEnabled }"/>
+            app:value="@={ viewModel.pickerValue }"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="0dp"
             android:gravity="center"
             android:text="value: "
             android:textSize="@dimen/text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextView"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/picker"
-            app:layout_constraintVertical_bias="0.0"/>
+            />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center"
             android:text="@{ `` + viewModel.pickerValue }"
             android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="@+id/textView"/>
 
-        <Button
-            android:id="@+id/button"
+        <View
+            android:id="@+id/dataBindingGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/data_binding_group_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+        <TextView
+            android:id="@+id/dataBinding"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="data binding"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextView"
+            app:layout_constraintStart_toStartOf="@+id/dataBindingGroup"
+            app:layout_constraintTop_toTopOf="@+id/dataBindingGroup"/>
+
+        <Button
+            android:id="@+id/valueToTwoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:onClick="@{ _ -> viewModel.setValueTo( 2 ) }"
             android:text="value to 2"
-            android:textSize="@dimen/text_size"
             android:textAllCaps="false"
-            app:layout_constraintStart_toStartOf="@+id/picker"
-            app:layout_constraintTop_toTopOf="@+id/button2"/>
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
+            app:layout_constraintStart_toStartOf="@+id/dataBindingGroup"
+            app:layout_constraintTop_toTopOf="@+id/valueToFourButton"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/valueToFourButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:onClick="@{ _ -> viewModel.setValueTo( 4 ) }"
             android:text="value to 4"
-            android:textSize="@dimen/text_size"
             android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:onClick="@{ _ -> viewModel.setValueTo( 4 ) }"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/dataBinding"/>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/valueToSevenButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:onClick="@{ _ -> viewModel.setValueTo( 7 ) }"
             android:text="value to 7"
-            android:textSize="@dimen/text_size"
             android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="@+id/picker"
-            app:layout_constraintTop_toTopOf="@+id/button2"/>
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
+            app:layout_constraintEnd_toEndOf="@+id/dataBindingGroup"
+            app:layout_constraintTop_toTopOf="@+id/valueToFourButton"/>
 
         <Switch
             android:id="@+id/is_enabled_switch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:checked="@={ viewModel.isEnabled }"
             android:text="enabled"
             android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"/>
+            app:layout_constraintTop_toBottomOf="@+id/valueToFourButton"/>
 
         <Button
-            android:id="@+id/selectorColor"
+            android:id="@+id/setList"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="set random selector color"
-            android:textSize="@dimen/text_size"
-            android:textAllCaps="false"
+            android:layout_height="0dp"
+            android:text="change list"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/is_enabled_switch"
             />
 
         <Button
+            android:id="@+id/selectorColor"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="set random selector color"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataBindingGroup"/>
+
+        <Button
             android:id="@+id/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="set random text color"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectorColor"/>
+
+        <Button
+            android:id="@+id/setTextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:text="set random text color"
+            android:text="set text size to 22"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selectorColor"/>
+            app:layout_constraintTop_toBottomOf="@+id/textColor"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

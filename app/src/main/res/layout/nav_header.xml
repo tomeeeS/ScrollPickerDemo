@@ -27,12 +27,12 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <!-- TODO: add actual logo once available -->
-    <ImageView
-        android:layout_width="@dimen/navigation_drawer_image_width"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        />
+    <!--<ImageView-->
+        <!--android:layout_width="@dimen/navigation_drawer_image_width"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--app:srcCompat="@drawable/ic_launcher_foreground"-->
+        <!--/>-->
 
     <TextView
         android:layout_width="wrap_content"
