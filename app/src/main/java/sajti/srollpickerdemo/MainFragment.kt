@@ -17,6 +17,9 @@ class MainFragment : Fragment() {
 
     private val LAYOUT = R.layout.fragment_main
 
+    val COLOR_RANDOM_INT_BOUND: Int = 256
+    val COLOR_MAX_ALPHA: Int = 255
+
     lateinit var scrollPicker: ScrollPicker
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
@@ -27,13 +30,13 @@ class MainFragment : Fragment() {
             setLifecycleOwner(this@MainFragment)
 
             scrollPicker = picker.apply {
-                setShownItemCount( 5 )
-                val colors = getResources().getStringArray( R.array.colors )
-                setList( colors.toCollection( ArrayList() ) )
+                setShownItemCount( viewModel.SHOWN_ITEM_COUNT )
                 setEnabled( true )
+                setList( viewModel.shownList )
             }
             selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor( getRandomColor() ) }
             textColor.setOnClickListener { _ -> scrollPicker.setTextColor( getRandomColor() ) }
+            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize( 22f ) }
         }
 
         return binding.root
@@ -41,7 +44,7 @@ class MainFragment : Fragment() {
 
     fun getRandomColor(): Int {
         val rnd = Random()
-        val color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
+        val color = Color.argb( COLOR_MAX_ALPHA, rnd.nextInt( COLOR_RANDOM_INT_BOUND ), rnd.nextInt( COLOR_RANDOM_INT_BOUND ), rnd.nextInt( COLOR_RANDOM_INT_BOUND ) )
         return color
     }
 }

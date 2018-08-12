@@ -154,6 +154,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="change list"
+            android:onClick="@{ _ -> viewModel.changeList() }"
             app:layout_constraintHeight_percent="@dimen/heightPercentButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
