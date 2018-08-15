@@ -10,7 +10,7 @@ class MainFragmentViewModel : ViewModel() {
     val SHOWN_ITEM_COUNT: Int = 5
     val DEFAULT_STRING_PICKER_VALUE: Int = 5
 
-    val numbers: ArrayList< Any > = arrayListOf( -5, -3, -15, 2, 4, 50, 7, 70 )
+    val numbers: ArrayList< Any > = arrayListOf( -5, 3, -15, 7, 4, -50, 2, 70 )
     val colors: ArrayList< Any > = arrayListOf( "red", "green", "blue", "yellow", "purple", "white", "llama color", "teal", "black", "pink" )
     var pickerValue: ObservableInt = ObservableInt()
     var isEnabled: ObservableBoolean = ObservableBoolean( true )
