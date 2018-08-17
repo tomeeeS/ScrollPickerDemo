@@ -1,4 +1,4 @@
-package sajti.srollpickerdemo
+package sajti.scrollpickerdemo
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
@@ -8,8 +8,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import sajti.scroll_picker.ScrollPicker
-import sajti.srollpickerdemo.databinding.FragmentMainBinding
+import sajti.scrollpicker.ScrollPicker
+import sajti.scrollpickerdemo.databinding.FragmentMainBinding
 import java.util.*
 
 

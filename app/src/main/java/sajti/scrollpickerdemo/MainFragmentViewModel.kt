@@ -1,4 +1,4 @@
-package sajti.srollpickerdemo
+package sajti.scrollpickerdemo
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableBoolean

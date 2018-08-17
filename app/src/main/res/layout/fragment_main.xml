@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="sajti.srollpickerdemo.MainFragmentViewModel"/>
+            type="sajti.scrollpickerdemo.MainFragmentViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -17,7 +17,7 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/activity_main">
 
-        <sajti.scroll_picker.ScrollPicker
+        <sajti.scrollpicker.ScrollPicker
             android:id="@+id/picker"
             android:layout_width="match_parent"
             android:layout_height="0dp"
