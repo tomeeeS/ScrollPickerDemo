@@ -25,14 +25,6 @@ buildscript {
         workVersion = '1.0.0-alpha06'
         navigation_ktx_version = 'ktx:1.0.0-alpha04'
 
-
-        libVersionCode = 0
-        libVersionName = '0.1'
-        libPomUrl = 'https://github.com/tomeeeS/ScrollPicker'
-        libGithubRepo = 'tomeeeS/ScrollPicker'
-        libModuleName = 'scroll_picker'
-        libModuleDesc = 'Customizable and data-bindable NumberPicker-like UI element for android.'
-        libBintrayName = 'ScrollPicker'
     }
 
 

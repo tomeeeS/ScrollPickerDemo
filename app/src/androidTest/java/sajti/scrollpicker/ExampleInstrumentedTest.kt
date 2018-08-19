@@ -1,7 +1,9 @@
 package sajti.scrollpicker
 
+import android.os.SystemClock
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.ViewInteraction
+import android.support.test.espresso.action.ViewActions
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.BoundedMatcher
@@ -32,14 +34,45 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun scrollPickerPositionIsCorrect_onScroll() {
-//        scrollPicker.perform( ViewActions.swipeDown() )check( matches(  ) )
-    }
-
-    @Test
     fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
         onView(withId(R.id.setTextSize)).perform(click())
         scrollPicker.check(matches(withScrollPickerFontSize(22f)))
+    }
+
+    @Test
+    fun scrollPickerPositionIsCorrect_onScroll() {
+        onView(withId(R.id.setList)).perform(click())
+        for( i in 1..200 ) {
+            scrollPicker.perform( if( i % 2 == 0 ) ViewActions.swipeUp() else ViewActions.swipeDown() )
+            SystemClock.sleep(1000) // todo: wait until it's finished, not until a fixed amount of time has passed
+            scrollPicker.check(matches(withScrollPickerScrollYValid()))
+        }
+    }
+
+    private fun withScrollPickerScrollYValid(): Matcher<View> {
+        return object : BoundedMatcher<View, View>(View::class.java) {
+
+            var scrollY = 0
+            var cellHeight = 0
+            var scrollYMod = 0
+
+            public override fun matchesSafely(target: View): Boolean {
+                if (target !is ScrollPicker) {
+                    return false
+                }
+                val scrollYErrorMargin = target.itemsToShow
+                scrollY = target.getListScrollY()
+                cellHeight = target.cellHeight
+                scrollYMod = scrollY % cellHeight
+                val scrollYError = scrollYMod % (cellHeight - scrollYErrorMargin)
+                return scrollYError < scrollYErrorMargin
+            }
+
+            override fun describeTo(description: Description) {
+                if( cellHeight != 0 )
+                    description.appendText("scrollY: %d, cellHeight: %d, mod: %d".format(scrollY, cellHeight, scrollY % cellHeight))
+            }
+        }
     }
 
     fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {
