@@ -18,23 +18,17 @@ import org.junit.runner.RunWith
 import sajti.scrollpickerdemo.MainActivity
 import sajti.scrollpickerdemo.R
 
-
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
     lateinit var scrollPicker: ViewInteraction
 
     @get:Rule
-    val activityRule: ActivityTestRule<MainActivity> = ActivityTestRule( MainActivity::class.java )
+    val activityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
 
     @Before
     fun initFields() {
-        scrollPicker = onView( withId( R.id.picker ) )
+        scrollPicker = onView(withId(R.id.picker))
     }
 
     @Test
@@ -44,25 +38,25 @@ class ExampleInstrumentedTest {
 
     @Test
     fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
-        onView( withId( R.id.setTextSize ) ).perform( click() )
-        scrollPicker.check( matches( withScrollPickerFontSize( 22f ) ) )
+        onView(withId(R.id.setTextSize)).perform(click())
+        scrollPicker.check(matches(withScrollPickerFontSize(22f)))
     }
 
     fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {
-        return object : BoundedMatcher<View, View>( View::class.java ) {
+        return object : BoundedMatcher<View, View>(View::class.java) {
 
-            public override fun matchesSafely( target: View ): Boolean {
-                if( target !is ScrollPicker) {
+            public override fun matchesSafely(target: View): Boolean {
+                if (target !is ScrollPicker) {
                     return false
                 }
                 val targetScrollPicker = target
                 val textSize = targetScrollPicker.getTextSize()
-                return textSize.compareTo( expectedSize ) == 0
+                return textSize.compareTo(expectedSize) == 0
             }
 
             override fun describeTo(description: Description) {
-                description.appendText( "with fontSize: " )
-                description.appendValue( expectedSize )
+                description.appendText("with fontSize: ")
+                description.appendValue(expectedSize)
             }
         }
     }

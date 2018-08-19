@@ -10,8 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import sajti.scrollpicker.ScrollPicker
 import sajti.scrollpickerdemo.databinding.FragmentMainBinding
-import java.util.*
-
+import java.util.Random
 
 class MainFragment : Fragment() {
 
@@ -22,21 +21,21 @@ class MainFragment : Fragment() {
 
     lateinit var scrollPicker: ScrollPicker
 
-    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
-        val viewModel = ViewModelProviders.of( this ).get( MainFragmentViewModel::class.java )
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val viewModel = ViewModelProviders.of(this).get(MainFragmentViewModel::class.java)
 
-        val binding = DataBindingUtil.inflate<FragmentMainBinding>( inflater, LAYOUT, container, false).apply {
-            setViewModel( viewModel )
+        val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater, LAYOUT, container, false).apply {
+            setViewModel(viewModel)
             setLifecycleOwner(this@MainFragment)
 
             scrollPicker = picker.apply {
-                setShownItemCount( viewModel.SHOWN_ITEM_COUNT )
-                setEnabled( true )
-                setList( viewModel.shownList )
+                setShownItemCount(viewModel.SHOWN_ITEM_COUNT)
+                setEnabled(true)
+                setList(viewModel.shownList)
             }
-            selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor( getRandomColor() ) }
-            textColor.setOnClickListener { _ -> scrollPicker.setTextColor( getRandomColor() ) }
-            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize( 22f ) }
+            selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor(getRandomColor()) }
+            textColor.setOnClickListener { _ -> scrollPicker.setTextColor(getRandomColor()) }
+            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(22f) }
         }
 
         return binding.root
@@ -44,7 +43,7 @@ class MainFragment : Fragment() {
 
     fun getRandomColor(): Int {
         val rnd = Random()
-        val color = Color.argb( COLOR_MAX_ALPHA, rnd.nextInt( COLOR_RANDOM_INT_BOUND ), rnd.nextInt( COLOR_RANDOM_INT_BOUND ), rnd.nextInt( COLOR_RANDOM_INT_BOUND ) )
+        val color = Color.argb(COLOR_MAX_ALPHA, rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND))
         return color
     }
 }

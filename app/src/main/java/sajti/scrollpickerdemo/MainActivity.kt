@@ -9,25 +9,23 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import sajti.scrollpickerdemo.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
 
-    override fun onCreate( savedInstanceState: Bundle? ) {
-        super.onCreate( savedInstanceState )
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        val binding: ActivityMainBinding  = DataBindingUtil.setContentView( this, R.layout.activity_main )
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         drawerLayout = binding.drawerLayout
 
-        val navController = Navigation.findNavController( this, R.id.nav_fragment )
+        val navController = Navigation.findNavController(this, R.id.nav_fragment)
 
         // Set up ActionBar
         setSupportActionBar(binding.toolbar)
-        NavigationUI.setupActionBarWithNavController( this, navController, drawerLayout )
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
         // Set up navigation menu
-        binding.navigationView.setupWithNavController( navController )
+        binding.navigationView.setupWithNavController(navController)
     }
-
 }

@@ -11,7 +11,7 @@ buildscript {
         constraintLayoutVersion = '1.1.2'
         espressoVersion = '3.0.2'
         glideVersion = '4.4.0'
-        gradleVersion = '3.2.0-beta05'
+        gradlePluginVersion = '3.2.0-beta05'
         gsonVersion = '2.8.2'
         junitVersion = '4.12'
         lifecycleVersion = '1.1.1'
@@ -24,6 +24,15 @@ buildscript {
         supportLibraryVersion = '28.0.0-beta01'
         workVersion = '1.0.0-alpha06'
         navigation_ktx_version = 'ktx:1.0.0-alpha04'
+
+
+        libVersionCode = 0
+        libVersionName = '0.1'
+        libPomUrl = 'https://github.com/tomeeeS/ScrollPicker'
+        libGithubRepo = 'tomeeeS/ScrollPicker'
+        libModuleName = 'scroll_picker'
+        libModuleDesc = 'Customizable and data-bindable NumberPicker-like UI element for android.'
+        libBintrayName = 'ScrollPicker'
     }
 
 
@@ -32,7 +41,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "com.android.tools.build:gradle:$gradlePluginVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
@@ -46,12 +55,5 @@ allprojects {
     repositories {
         google()
         jcenter()
-    }
-}
-
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint(ktlintVersion)
     }
 }
