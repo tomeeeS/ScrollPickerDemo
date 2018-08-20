@@ -42,7 +42,7 @@ class ExampleInstrumentedTest {
     @Test
     fun scrollPickerPositionIsCorrect_onScroll() {
         onView(withId(R.id.setList)).perform(click())
-        for( i in 1..200 ) {
+        for( i in 1..100 ) {
             scrollPicker.perform( if( i % 2 == 0 ) ViewActions.swipeUp() else ViewActions.swipeDown() )
             SystemClock.sleep(1000) // todo: wait until it's finished, not until a fixed amount of time has passed
             scrollPicker.check(matches(withScrollPickerScrollYValid()))
@@ -60,12 +60,11 @@ class ExampleInstrumentedTest {
                 if (target !is ScrollPicker) {
                     return false
                 }
-                val scrollYErrorMargin = target.itemsToShow
                 scrollY = target.getListScrollY()
                 cellHeight = target.cellHeight
                 scrollYMod = scrollY % cellHeight
-                val scrollYError = scrollYMod % (cellHeight - scrollYErrorMargin)
-                return scrollYError < scrollYErrorMargin
+                val scrollYError = scrollYMod % cellHeight
+                return scrollYError == 0
             }
 
             override fun describeTo(description: Description) {
