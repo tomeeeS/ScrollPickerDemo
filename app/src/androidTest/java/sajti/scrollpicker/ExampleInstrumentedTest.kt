@@ -18,6 +18,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import sajti.scrollpickerdemo.MainActivity
+import sajti.scrollpickerdemo.MainFragmentViewModel
 import sajti.scrollpickerdemo.R
 
 @RunWith(AndroidJUnit4::class)
@@ -39,22 +40,32 @@ class ExampleInstrumentedTest {
         scrollPicker.check(matches(withScrollPickerFontSize(22f)))
     }
 
+    // tests if scroll picker scrolls itself to an item perfectly and if it sets the value correctly on scroll.
+    // we check it 50 times for int list and 50 times for string list
     @Test
-    fun scrollPickerPositionIsCorrect_onScroll() {
+    fun scrollPickerPositionAndValueAreCorrect_onScroll() {
+        testScroll( true )
         onView(withId(R.id.setList)).perform(click())
-        for( i in 1..100 ) {
-            scrollPicker.perform( if( i % 2 == 0 ) ViewActions.swipeUp() else ViewActions.swipeDown() )
-            SystemClock.sleep(1000) // todo: wait until it's finished, not until a fixed amount of time has passed
-            scrollPicker.check(matches(withScrollPickerScrollYValid()))
+        testScroll( false )
+    }
+
+    fun testScroll(isNumeric: Boolean) {
+        for(i in 1..50) {
+            scrollPicker.perform(if(i % 2 == 0) ViewActions.swipeUp() else ViewActions.swipeDown()) // we do swipe downs and swipe ups in succession
+            SystemClock.sleep(1000) // wait until animations are surely finished
+            scrollPicker.check(matches(withScrollPickerScrollYAndValueCorrect(isNumeric)))
         }
     }
 
-    private fun withScrollPickerScrollYValid(): Matcher<View> {
+    private fun withScrollPickerScrollYAndValueCorrect(isNumeric: Boolean): Matcher<View> {
         return object : BoundedMatcher<View, View>(View::class.java) {
 
             var scrollY = 0
             var cellHeight = 0
-            var scrollYMod = 0
+            var scrollYError = 0
+            var previousCellsCount = 0
+            var pickerValue = 0
+            val numbers = MainFragmentViewModel().numbers
 
             public override fun matchesSafely(target: View): Boolean {
                 if (target !is ScrollPicker) {
@@ -62,14 +73,17 @@ class ExampleInstrumentedTest {
                 }
                 scrollY = target.getListScrollY()
                 cellHeight = target.cellHeight
-                scrollYMod = scrollY % cellHeight
-                val scrollYError = scrollYMod % cellHeight
-                return scrollYError == 0
+                previousCellsCount = scrollY / cellHeight
+                pickerValue = target.value
+                scrollYError = scrollY % cellHeight
+                val isValueCorrect = if( isNumeric ) pickerValue == numbers[ previousCellsCount ] else pickerValue == previousCellsCount
+                return scrollYError == 0 && isValueCorrect
             }
 
             override fun describeTo(description: Description) {
                 if( cellHeight != 0 )
-                    description.appendText("scrollY: %d, cellHeight: %d, mod: %d".format(scrollY, cellHeight, scrollY % cellHeight))
+                    description.appendText("scrollY: %d, cellHeight: %d, scrollYError: %d, previousCellsCount: %d, pickerValue: %d"
+                            .format(scrollY, cellHeight, scrollYError, previousCellsCount, pickerValue))
             }
         }
     }

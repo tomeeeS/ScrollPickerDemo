@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="sajti.scrollpickerdemo.MainFragmentViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+    android:id="@+id/page1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <View
+            android:id="@+id/dataBindingGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/data_binding_group_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/dataBinding"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="data binding"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextViewInPager"
+            app:layout_constraintStart_toStartOf="@+id/dataBindingGroup"
+            app:layout_constraintTop_toTopOf="@+id/dataBindingGroup"/>
+
+        <Button
+            android:id="@+id/valueToTwoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick="@{ _ -> viewModel.setValueTo( 2 ) }"
+            android:text="value to 2"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="@+id/dataBindingGroup"
+            app:layout_constraintTop_toTopOf="@+id/valueToFourButton"/>
+
+        <Button
+            android:id="@+id/valueToFourButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:onClick="@{ _ -> viewModel.setValueTo( 4 ) }"
+            android:text="value to 4"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataBinding"/>
+
+        <Button
+            android:id="@+id/valueToSevenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:onClick="@{ _ -> viewModel.setValueTo( 7 ) }"
+            android:text="value to 7"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="@+id/dataBindingGroup"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintTop_toTopOf="@+id/valueToFourButton"/>
+
+        <Switch
+            android:id="@+id/is_enabled_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:checked="@={ viewModel.isEnabled }"
+            android:text="enabled"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextViewInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/valueToFourButton"/>
+
+        <Button
+            android:id="@+id/setList"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:onClick="@{ _ -> viewModel.changeList() }"
+            android:text="change list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/is_enabled_switch"
+            />
+
+        <Button
+            android:id="@+id/selectorColor"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="set random selector color"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataBindingGroup"/>
+
+        <Button
+            android:id="@+id/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="set random text color"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectorColor"/>
+
+        <Button
+            android:id="@+id/setTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:text="set text size to 22"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textColor"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

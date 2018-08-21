@@ -2,7 +2,6 @@ package sajti.scrollpickerdemo
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,14 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import sajti.scrollpicker.ScrollPicker
 import sajti.scrollpickerdemo.databinding.FragmentMainBinding
-import java.util.Random
 
 class MainFragment : Fragment() {
 
     private val LAYOUT = R.layout.fragment_main
-
-    val COLOR_RANDOM_INT_BOUND: Int = 256
-    val COLOR_MAX_ALPHA: Int = 255
 
     lateinit var scrollPicker: ScrollPicker
 
@@ -30,20 +25,12 @@ class MainFragment : Fragment() {
 
             scrollPicker = picker.apply {
                 setShownItemCount(viewModel.SHOWN_ITEM_COUNT)
-                setEnabled(true)
                 setList(viewModel.shownList)
             }
-            selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor(getRandomColor()) }
-            textColor.setOnClickListener { _ -> scrollPicker.setTextColor(getRandomColor()) }
-            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(22f) }
+            pager.adapter = ScrollPickerDemoAdapter( scrollPicker, viewModel )
         }
 
         return binding.root
     }
 
-    fun getRandomColor(): Int {
-        val rnd = Random()
-        val color = Color.argb(COLOR_MAX_ALPHA, rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND))
-        return color
-    }
 }
