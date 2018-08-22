@@ -19,7 +19,7 @@ The property about which item is selected is called the 'value' of the scroll pi
 #### ! You can set an arbitrary list of numbers, not only a positive range
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
-* You can't edit the items in the list with this. I did not find that a major use case.
+* You can't edit the items in the list with this.
 
 ## Tests
 * Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
