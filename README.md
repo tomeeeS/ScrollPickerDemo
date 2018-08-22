@@ -8,15 +8,15 @@ Demo project to showcase and test my android [ScrollPicker](https://github.com/t
 The property about which item is selected is called the 'value' of the scroll picker - just as with NumberPickers. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
 
 ### Extras not available in NumberPicker
-#### Data binding - get automatic syncronization with your ViewModel data
-* Value is two-way data-bindable!
+#### ! Data binding - get automatic syncronization with your ViewModel data
+* Value is two-way data-bindable
 * The item list is data-bindable.
 * isEnabled is data-bindable.
-#### ScrollPicker is customizable
+#### ! ScrollPicker is customizable
 * You can set how many items it should display at a time, it's not only always 3 like in the case of NumberPicker.
 * Text size and color for the items, there's a possibility to set different values of these for the selected item.
 * Selector style: classic 2 lines, rectangular or filled rectangle
-#### You can set an arbitrary list of numbers, not only a positive range
+#### ! You can set an arbitrary list of numbers, not only a positive range
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't edit the items in the list with this. I did not find that a major use case.
