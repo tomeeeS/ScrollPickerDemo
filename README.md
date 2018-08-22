@@ -1,15 +1,23 @@
 # ScrollPickerDemo
 Demo project to showcase and test my android [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) custom view.
 
+## Functionality
+### Similarities with NumberPicker
+* You can set a list of strings or integers for it to display.
+* You can set which item to select from the list. The default is the first one. Then you can scroll it  
+This is property of which item is selected is called the 'value' of the scroll picker - just as with NumberPickers. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
+
+### Extras not available in NumberPicker
+* Value is two-way data-bindable!
 
 ## Tests
-* Setting an int list to the picker, then do successive scrolls on it with checks on it after it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
+* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
 Then we repeat this test after setting a string list to the picker.
 * Check set text size correctness.
 
 ## Dependencies
 
-### the demo part (app module)
+### The demo part (app module)
 * written in kotlin 
 * Minsdk is 16.  
 
