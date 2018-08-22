@@ -1,4 +1,4 @@
-package sajti.scrollpickerdemo
+package com.github.tomeees.scrollpickerdemo
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import sajti.scrollpicker.ScrollPicker
-import sajti.scrollpickerdemo.databinding.FragmentMainBinding
+import com.github.tomeees.scrollpicker.ScrollPicker
+import com.github.tomeees.scrollpickerdemo.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
 

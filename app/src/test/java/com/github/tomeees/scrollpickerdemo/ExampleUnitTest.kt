@@ -1,4 +1,4 @@
-package sajti.scrollpickerdemo
+package com.github.tomeees.scrollpickerdemo
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

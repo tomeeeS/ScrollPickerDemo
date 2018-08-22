@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="sajti.scrollpickerdemo.MainFragmentViewModel"/>
+            type="com.github.tomeees.scrollpickerdemo.MainFragmentViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -143,7 +143,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:text="set text size to 22"
+            android:text="set text size to 20"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
             app:layout_constraintEnd_toEndOf="parent"

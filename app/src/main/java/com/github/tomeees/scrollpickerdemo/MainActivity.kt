@@ -1,4 +1,4 @@
-package sajti.scrollpickerdemo
+package com.github.tomeees.scrollpickerdemo
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import sajti.scrollpickerdemo.databinding.ActivityMainBinding
+import com.github.tomeees.scrollpickerdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

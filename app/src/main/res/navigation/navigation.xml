@@ -4,5 +4,5 @@
             app:startDestination="@+id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="sajti.scrollpickerdemo.MainFragment"/>
+        android:name="com.github.tomeees.scrollpickerdemo.MainFragment"/>
 </navigation>

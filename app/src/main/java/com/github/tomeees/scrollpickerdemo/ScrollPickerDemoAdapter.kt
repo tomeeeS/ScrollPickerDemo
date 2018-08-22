@@ -1,4 +1,4 @@
-package sajti.scrollpickerdemo
+package com.github.tomeees.scrollpickerdemo
 
 import android.content.Context
 import android.databinding.DataBindingUtil
@@ -7,8 +7,8 @@ import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import sajti.scrollpicker.ScrollPicker
-import sajti.scrollpickerdemo.databinding.ViewPagerPage1Binding
+import com.github.tomeees.scrollpicker.ScrollPicker
+import com.github.tomeees.scrollpickerdemo.databinding.ViewPagerPage1Binding
 import java.util.*
 
 class ScrollPickerDemoAdapter( val scrollPicker: ScrollPicker, val mainFragmentViewModel: MainFragmentViewModel) : PagerAdapter() {
@@ -35,7 +35,7 @@ class ScrollPickerDemoAdapter( val scrollPicker: ScrollPicker, val mainFragmentV
             setViewModel( mainFragmentViewModel )
             selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor(getRandomColor()) }
             textColor.setOnClickListener { _ -> scrollPicker.setTextColor(getRandomColor()) }
-            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(22f) }
+            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(20f) }
         }
         container.addView( binding.root )
         return binding.root

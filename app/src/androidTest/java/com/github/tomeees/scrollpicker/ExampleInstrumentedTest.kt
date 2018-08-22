@@ -1,4 +1,4 @@
-package sajti.scrollpicker
+package com.github.tomeees.scrollpicker
 
 import android.os.SystemClock
 import android.support.test.espresso.Espresso.onView
@@ -17,9 +17,9 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import sajti.scrollpickerdemo.MainActivity
-import sajti.scrollpickerdemo.MainFragmentViewModel
-import sajti.scrollpickerdemo.R
+import com.github.tomeees.scrollpickerdemo.MainActivity
+import com.github.tomeees.scrollpickerdemo.MainFragmentViewModel
+import com.github.tomeees.scrollpickerdemo.R
 
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {

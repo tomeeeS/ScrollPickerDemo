@@ -7,7 +7,7 @@ apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "sajti.scrollpickerdemo"
+        applicationId "com.github.tomeees.scrollpickerdemo"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
