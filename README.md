@@ -1,5 +1,5 @@
 # ScrollPickerDemo
-Demo project to showcase and test my android [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) custom view.
+Demo project to showcase and test my android [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) custom view, which is a customizable and data-bindable NumberPicker-like UI element for android. 
 
 ## Functionality
 ### Similarities with NumberPicker
