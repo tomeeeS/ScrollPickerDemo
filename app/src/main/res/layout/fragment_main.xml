@@ -35,7 +35,7 @@
             app:layout_constraintVertical_chainStyle="packed"
             app:selectorColor="@color/selectorColor"
             app:selectedTextColor="@color/selectedTextColor"
-            app:selectedTextSize="26"
+            app:selectedTextSize="22"
             app:value="@={ viewModel.pickerValue }"/>
 
         <TextView
