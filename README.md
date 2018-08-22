@@ -21,7 +21,6 @@ The property about which item is selected is called the 'value' of the scroll pi
 ## Tests
 * Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
 Then we repeat this test after setting a string list to the picker.
-* Check set text size correctness.
 
 ## Dependencies
 
