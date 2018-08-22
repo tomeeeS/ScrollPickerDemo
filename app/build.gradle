@@ -34,8 +34,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation "android.arch.navigation:navigation-fragment-$navigation_ktx_version"
-    implementation "android.arch.navigation:navigation-ui-$navigation_ktx_version"
 
     implementation "android.arch.work:work-runtime-ktx:$rootProject.workVersion"
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
