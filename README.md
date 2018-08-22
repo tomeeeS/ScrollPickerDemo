@@ -3,7 +3,7 @@ Demo project to showcase and test my android [ScrollPicker](https://github.com/t
 
 
 ## Tests
-* Setting an int list to the picker, then do successive scrolls on it with checks on it after it does the correction scroll to be in a perfect position selecting an item and becomes stationary. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
+* Setting an int list to the picker, then do successive scrolls on it with checks on it after it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
 Then we repeat this test after setting a string list to the picker.
 * Check set text size correctness.
 
