@@ -12,8 +12,11 @@ The property about which item is selected is called the 'value' of the scroll pi
 * Value is two-way data-bindable!
 * The item list is data-bindable.
 * isEnabled is data-bindable.
-#### ScrollPicker is highly customizable
+#### ScrollPicker is customizable
 * You can set how many items it should display at a time, it's not only always 3 like in the case of NumberPicker.
+* Text size and color for the items, there's a possibility to set different values of these for the selected item.
+* Selector style: classic 2 lines, rectangular or filled rectangle
+#### You can set an arbitrary list of numbers, not only a positive range
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't edit the items in the list with this. I did not find that a major use case.
