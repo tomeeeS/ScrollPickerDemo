@@ -23,7 +23,7 @@ You can set
 * You can't edit the items in the list with this.
 
 ## Tests
-* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct.  
+* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct and also if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
 Then we repeat this test after setting a string list to the picker.
 
 ## Dependencies
