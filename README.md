@@ -9,14 +9,17 @@ The property about which item is selected is called the 'value' of the scroll pi
 
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
-* Value is two-way data-bindable
+* Value is two-way data-bindable.
+* Selected index is two-way data-bindable.
 * The item list is data-bindable.
 * isEnabled is data-bindable.
 #### ScrollPicker is customizable
 You can set  
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
-* Selector style: classic 2 lines, rectangular or filled rectangle
+* Selector style: classic 2 lines, rectangular or filled rectangle.
+* The selected index in case of ints too.
+
 #### You can set an arbitrary list of numbers, not only a positive range
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
