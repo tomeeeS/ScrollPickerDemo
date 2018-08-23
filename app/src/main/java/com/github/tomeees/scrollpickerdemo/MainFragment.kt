@@ -27,7 +27,7 @@ class MainFragment : Fragment() {
                 setShownItemCount(viewModel.SHOWN_ITEM_COUNT)
                 setList(viewModel.shownList)
             }
-            pager.adapter = ScrollPickerDemoAdapter( scrollPicker, viewModel )
+            pager.adapter = ScrollPickerDemoAdapter(this@MainFragment.context!!, scrollPicker, viewModel )
         }
 
         return binding.root

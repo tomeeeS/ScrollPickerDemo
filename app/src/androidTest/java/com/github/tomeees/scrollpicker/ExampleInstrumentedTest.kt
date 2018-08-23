@@ -7,19 +7,21 @@ import android.support.test.espresso.action.ViewActions
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.BoundedMatcher
+import android.support.test.espresso.matcher.ViewMatchers.withContentDescription
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import android.view.View
+import com.github.tomeees.scrollpickerdemo.MainActivity
+import com.github.tomeees.scrollpickerdemo.MainFragmentViewModel
+import com.github.tomeees.scrollpickerdemo.R
 import org.hamcrest.Description
 import org.hamcrest.Matcher
+import org.hamcrest.Matchers.not
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import com.github.tomeees.scrollpickerdemo.MainActivity
-import com.github.tomeees.scrollpickerdemo.MainFragmentViewModel
-import com.github.tomeees.scrollpickerdemo.R
 
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
@@ -35,9 +37,8 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
-        onView(withId(R.id.setTextSize)).perform(click())
-        scrollPicker.check(matches(withScrollPickerFontSize(22f)))
+    fun contentDescriptionIsSet() {
+        scrollPicker.check(matches(not( withContentDescription( "" ))))
     }
 
     // tests if scroll picker scrolls itself to an item perfectly and if it sets the value correctly on scroll.
@@ -50,14 +51,14 @@ class ExampleInstrumentedTest {
     }
 
     fun testScroll(isNumeric: Boolean) {
-        for(i in 1..50) {
+        for(i in 1..20) {
             scrollPicker.perform(if(i % 2 == 0) ViewActions.swipeUp() else ViewActions.swipeDown()) // we do swipe downs and swipe ups in succession
             SystemClock.sleep(1000) // wait until animations are surely finished
-            scrollPicker.check(matches(withScrollPickerScrollYAndValueCorrect(isNumeric)))
+            scrollPicker.check(matches(withScrollPicker_ScrollYAndValueAndContentDescription_AreCorrect(isNumeric)))
         }
     }
 
-    private fun withScrollPickerScrollYAndValueCorrect(isNumeric: Boolean): Matcher<View> {
+    private fun withScrollPicker_ScrollYAndValueAndContentDescription_AreCorrect(isNumeric: Boolean): Matcher<View> {
         return object : BoundedMatcher<View, View>(View::class.java) {
 
             var scrollY = 0
@@ -77,7 +78,8 @@ class ExampleInstrumentedTest {
                 pickerValue = target.value
                 scrollYError = scrollY % cellHeight
                 val isValueCorrect = if( isNumeric ) pickerValue == numbers[ previousCellsCount ] else pickerValue == previousCellsCount
-                return scrollYError == 0 && isValueCorrect
+                val isContentDescriptionCorrect = target.contentDescription == target.items.get(target.selectedIndex).toString()
+                return scrollYError == 0 && isValueCorrect && isContentDescriptionCorrect
             }
 
             override fun describeTo(description: Description) {
@@ -86,6 +88,12 @@ class ExampleInstrumentedTest {
                             .format(scrollY, cellHeight, scrollYError, previousCellsCount, pickerValue))
             }
         }
+    }
+
+    @Test
+    fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
+        onView(withId(R.id.setTextSize)).perform(click())
+        scrollPicker.check(matches(withScrollPickerFontSize(22f)))
     }
 
     fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {

@@ -35,7 +35,7 @@ class MainFragmentViewModel : ViewModel() {
     fun initList() {
         if (showNumbers) {
             shownList.set(numbers)
-            pickerValue.set(numbers[ 2 ] as Int)
+            pickerValue.set(numbers[ 1 ] as Int)
         } else {
             shownList.set(colors)
             pickerValue.set(DEFAULT_STRING_PICKER_VALUE)

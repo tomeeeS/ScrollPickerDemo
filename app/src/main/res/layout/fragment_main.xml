@@ -36,7 +36,8 @@
             app:selectorColor="@color/selectorColor"
             app:selectedTextColor="@color/selectedTextColor"
             app:selectedTextSize="22"
-            app:value="@={ viewModel.pickerValue }"/>
+            app:value="@={ viewModel.pickerValue }"
+            />
 
         <TextView
             android:id="@+id/textView"

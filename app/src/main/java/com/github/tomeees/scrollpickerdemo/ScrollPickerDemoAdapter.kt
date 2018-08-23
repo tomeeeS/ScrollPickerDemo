@@ -11,7 +11,7 @@ import com.github.tomeees.scrollpicker.ScrollPicker
 import com.github.tomeees.scrollpickerdemo.databinding.ViewPagerPage1Binding
 import java.util.*
 
-class ScrollPickerDemoAdapter( val scrollPicker: ScrollPicker, val mainFragmentViewModel: MainFragmentViewModel) : PagerAdapter() {
+class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPicker, val mainFragmentViewModel: MainFragmentViewModel) : PagerAdapter() {
 
     val LAYOUT_PAGE_1 = R.layout.view_pager_page_1
     val LAYOUT_PAGE_2 = R.layout.view_pager_page_1
@@ -28,7 +28,7 @@ class ScrollPickerDemoAdapter( val scrollPicker: ScrollPicker, val mainFragmentV
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val binding = DataBindingUtil.inflate<ViewPagerPage1Binding>(container.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater,
+        val binding = DataBindingUtil.inflate<ViewPagerPage1Binding>( LayoutInflater.from( context ),
                 if( position == 1 ) LAYOUT_PAGE_1 else LAYOUT_PAGE_2,
                 container,
                 false).apply {
