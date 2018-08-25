@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="selectorColor">#7db3ff</color>
     <color name="selectedTextColor">#f9c725</color>
-    <color name="pickerBackground">#8defe5</color>
+    <color name="pickerBackground">#d2fffa</color>
     <color name="black">#000000</color>
+    <color name="separator">#90bdf1</color>
+    <color name="darkGreen">#FF2FC92F</color>
+    <color name="viewPagerColor">#f2fad5</color>
 </resources>

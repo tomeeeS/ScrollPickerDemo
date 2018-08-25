@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.github.tomeees.scrollpickerdemo.MainFragmentViewModel"/>
@@ -34,8 +35,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
             app:selectorColor="@color/selectorColor"
-            app:selectedTextColor="@color/selectedTextColor"
-            app:selectedTextSize="22"
             app:value="@={ viewModel.pickerValue }"
             />
 
@@ -71,19 +70,34 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
+            android:background="@color/viewPagerColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent="0.66"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            />
+            >
 
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_gravity="top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/pager"
+                app:tabBackground="@drawable/tab_bg_shape"
+                app:tabIndicatorColor="@color/darkGreen"
+                app:tabIndicatorHeight="3dp"
+                app:tabPaddingBottom="-1dp"
+                app:tabPaddingEnd="-1dp"
+                app:tabPaddingStart="-1dp"
+                app:tabPaddingTop="-1dp"
+                app:tabTextAppearance="@style/MyTabText"
+                />
+
+        </android.support.v4.view.ViewPager>
     </android.support.constraint.ConstraintLayout>
 
 </layout>

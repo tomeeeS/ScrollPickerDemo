@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle" >
+        </shape>
+    </item>
+
+    <item android:right="-1dp" android:left="-1dp">
+        <shape>
+            <solid android:color="@color/viewPagerColor" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/separator" />
+        </shape>
+    </item>
+
+</layer-list>

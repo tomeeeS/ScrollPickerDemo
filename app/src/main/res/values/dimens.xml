@@ -15,4 +15,5 @@
     <dimen name="heightPercentButtonInPager">.15</dimen>
     <dimen name="heightPercentTextView">.07</dimen>
     <dimen name="heightPercentTextViewInPager">.105</dimen>
+    <dimen name="bigger_text_size">18sp</dimen>
 </resources>

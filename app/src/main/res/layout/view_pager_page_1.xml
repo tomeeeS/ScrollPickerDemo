@@ -4,16 +4,18 @@
     >
 
     <data>
+
         <variable
             name="viewModel"
             type="com.github.tomeees.scrollpickerdemo.MainFragmentViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
-    android:id="@+id/page1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+        android:id="@+id/page1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
         <View
             android:id="@+id/dataBindingGroup"
@@ -23,7 +25,8 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:background="@drawable/data_binding_group_background"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/group_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".54"
             app:layout_constraintStart_toStartOf="parent"
