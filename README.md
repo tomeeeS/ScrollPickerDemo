@@ -8,12 +8,12 @@ Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/Scro
 The property about which item is selected is called the 'value' of the scroll picker - just as with NumberPickers. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
 
 ### Extras not available in NumberPicker
-#### Data binding! - get automatic syncronization with your ViewModel data
+#### **Data binding!** - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
 * Selected index is two-way data-bindable.
 * The item list is data-bindable.
 * isEnabled is data-bindable.
-#### ScrollPicker is customizable
+#### ScrollPicker is **customizable**
 You can set  
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
