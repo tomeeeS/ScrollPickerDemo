@@ -30,7 +30,7 @@ Then we repeat this test after setting a string list to the picker.
 ## Dependencies
 
 ### The demo part (app module)
-* written in kotlin 
+* Written in kotlin 
 * Minsdk is 16.  
 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
