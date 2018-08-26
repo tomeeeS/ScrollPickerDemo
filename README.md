@@ -24,8 +24,17 @@ The property about which item is selected is called the 'value' of the scroll pi
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
-* The item list is data-bindable.
 * isEnabled is data-bindable.
+* The item list is data-bindable, but you can only set it from code, not from xml due to lack of xml attribute types.  
+In your viewmodel you could have
+```
+    var shownList: ObservableField< ArrayList< Any > > = ObservableField() 
+```
+then in your view controller (fragment, activity, etc):
+```
+    scrollPicker.setList(viewModel.shownList)
+```
+
 #### ScrollPicker is customizable
 You can set  
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
