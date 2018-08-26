@@ -52,6 +52,12 @@ class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPic
             selectorStyle1.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE_FILLED ) }
             selectorStyle2.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE ) }
             selectorStyle3.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.CLASSIC ) }
+
+            shownItemCount1.setOnClickListener { _ -> scrollPicker.setShownItemCount( 3 ) }
+            shownItemCount2.setOnClickListener { _ -> scrollPicker.setShownItemCount( 5 ) }
+            shownItemCount3.setOnClickListener { _ -> scrollPicker.setShownItemCount( 6 ) }
+            shownItemCount4.setOnClickListener { _ -> scrollPicker.setShownItemCount( 7 ) }
+
             selectedItemTextColor.setOnClickListener { _ -> scrollPicker.setSelectedTextColor(getRandomColor()) }
             setSelectedTextSize.setOnClickListener { _ -> scrollPicker.setSelectedTextSize(24f) }
         }

@@ -11,9 +11,8 @@
     <dimen name="navigation_drawer_header_padding">16dp</dimen>
     <dimen name="navigation_drawer_image_width">100dp</dimen>
     <dimen name="text_size">18sp</dimen>
-    <dimen name="heightPercentButton">.1</dimen>
     <dimen name="heightPercentButtonInPager">.15</dimen>
     <dimen name="heightPercentTextView">.07</dimen>
-    <dimen name="heightPercentTextViewInPager">.105</dimen>
+    <dimen name="heightPercentTextViewInPager">.1</dimen>
     <dimen name="bigger_text_size">18sp</dimen>
 </resources>

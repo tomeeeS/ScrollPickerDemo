@@ -51,6 +51,7 @@
             android:text="Filled rect"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
             app:layout_constraintStart_toStartOf="@+id/selectorStyleGroup"
             app:layout_constraintTop_toBottomOf="@+id/selectorStyle"/>
@@ -63,6 +64,7 @@
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/selectorStyle"/>
@@ -76,6 +78,7 @@
             android:text="Classic"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_default="percent"
             app:layout_constraintEnd_toEndOf="@+id/selectorStyleGroup"
             app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
             app:layout_constraintTop_toBottomOf="@+id/selectorStyle"/>
@@ -87,6 +90,7 @@
             android:text="set random selected item text color"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_default="percent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,10 +107,108 @@
             android:text="set selected text size to 24"
             android:textAllCaps="false"
             android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_default="percent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/selectedItemTextColor"/>
+
+        <View
+            android:id="@+id/shownItemCountGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/group_background"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setSelectedTextSize"/>
+
+        <TextView
+            android:id="@+id/shownItemCount"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="shown item count"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentTextViewInPager"
+            app:layout_constraintStart_toStartOf="@+id/selectorStyleGroup"
+            app:layout_constraintTop_toTopOf="@+id/shownItemCountGroup"/>
+
+        <Button
+            android:id="@+id/shownItemCount1"
+            android:layout_width="68dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="3"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toStartOf="@+id/shownItemCountGroup"
+            app:layout_constraintTop_toBottomOf="@+id/shownItemCount"/>
+
+        <Button
+            android:id="@+id/shownItemCount2"
+            android:layout_width="69dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:text="5"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toEndOf="@+id/shownItemCount1"
+            app:layout_constraintTop_toBottomOf="@+id/shownItemCount"
+            />
+
+        <Button
+            android:id="@+id/shownItemCount3"
+            android:layout_width="68dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:text="6"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintStart_toEndOf="@+id/shownItemCount2"
+            app:layout_constraintTop_toBottomOf="@+id/shownItemCount"
+            />
+
+        <Button
+            android:id="@+id/shownItemCount4"
+            android:layout_width="69dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="26dp"
+            android:text="7"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="@dimen/heightPercentButtonInPager"
+            app:layout_constraintEnd_toEndOf="@+id/shownItemCountGroup"
+            app:layout_constraintStart_toEndOf="@+id/shownItemCount3"
+            app:layout_constraintTop_toBottomOf="@+id/shownItemCount"
+            />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
