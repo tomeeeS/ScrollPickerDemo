@@ -23,10 +23,6 @@ You can set
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't edit the items in the list with this.
 
-## Tests
-* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct and also if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
-Then we repeat this test after setting a string list to the picker.
-
 ## Dependencies
 
 ### The demo part (app module)
@@ -37,6 +33,10 @@ Then we repeat this test after setting a string list to the picker.
 * Purely written in Java 7.  
 * Minsdk is 11.  
 * Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you might have a problem - which can be solved by either using this exact version mentioned OR with gradle dependency constraints as far as I know.
+
+## Tests
+* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct and also if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
+Then we repeat this test after setting a string list to the picker.
 
 ## Donation
 If you found it useful, please consider donating. Thank you!  
