@@ -3,15 +3,15 @@ Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/Scro
   
 
 <p float="left">
-  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" height="427" />
+  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
   
   <p float="right">
-    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/7i" /> 
-    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/3s" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/7i.png" width="240" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/3s.png" width="240" /> 
   </p>
   <p float="right">
-    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/5s" /> 
-    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/6s" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/5s.png" width="240" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/6s.png" width="240" /> 
   </p>
 </p>
 
