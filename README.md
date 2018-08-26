@@ -1,5 +1,6 @@
 # ScrollPickerDemo
 Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/ScrollPicker), which is a customizable and data-bindable NumberPicker-like UI element for android. 
+![demo](https://github.com/tomeeeS/ScrollPickerDemo/raw/demo.gif)
 
 ## Functionality
 ### Similarities with NumberPicker
