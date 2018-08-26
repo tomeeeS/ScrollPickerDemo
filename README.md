@@ -23,6 +23,21 @@ You can set
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't edit the items in the list with this.
 
+## Download
+In module build.gradle:
+```
+repositories {
+    mavenCentral()
+    ...
+}
+...
+
+dependencies {
+    implementation "com.github.tomeees:scrollpicker:1.0.1"
+    ...
+}
+```
+    
 ## Dependencies
 
 ### The demo part (app module)
