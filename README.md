@@ -1,7 +1,19 @@
 # ScrollPickerDemo
 Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/ScrollPicker), which is a customizable and data-bindable NumberPicker-like UI element for android.  
   
-<img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" height="427" />
+
+<p float="left">
+  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
+  
+  <p float="right">
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/7i.png" width="240" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/3s.png" width="240" /> 
+  </p>
+  <p float="right">
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/5s.png" width="240" /> 
+    <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/6s.png" width="240" /> 
+  </p>
+</p>
 
 ## Functionality
 ### Similarities with NumberPicker
@@ -12,8 +24,17 @@ The property about which item is selected is called the 'value' of the scroll pi
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
-* The item list is data-bindable.
 * isEnabled is data-bindable.
+* The item list is data-bindable, but you can only set it from code, not from xml due to lack of xml attribute types.  
+In your viewmodel you could have
+```
+    var shownList: ObservableField< ArrayList< Any > > = ObservableField() 
+```
+then in your view layer (fragment, activity, etc):
+```
+    scrollPicker.setList(viewModel.shownList)
+```
+
 #### ScrollPicker is customizable
 You can set  
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
