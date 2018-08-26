@@ -59,7 +59,7 @@ class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPic
             shownItemCount4.setOnClickListener { _ -> scrollPicker.setShownItemCount( 7 ) }
 
             selectedItemTextColor.setOnClickListener { _ -> scrollPicker.setSelectedTextColor(getRandomColor()) }
-            setSelectedTextSize.setOnClickListener { _ -> scrollPicker.setSelectedTextSize(24f) }
+            setSelectedTextSize.setOnClickListener { _ -> scrollPicker.setSelectedTextSize(30f) }
         }
     }
 
@@ -71,7 +71,7 @@ class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPic
             setViewModel(mainFragmentViewModel)
             selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor(getRandomColor()) }
             textColor.setOnClickListener { _ -> scrollPicker.setTextColor(getRandomColor()) }
-            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(20f) }
+            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(24f) }
         }
     }
 

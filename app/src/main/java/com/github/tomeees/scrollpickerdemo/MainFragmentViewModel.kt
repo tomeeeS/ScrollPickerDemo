@@ -7,7 +7,6 @@ import android.databinding.ObservableInt
 
 class MainFragmentViewModel : ViewModel() {
 
-    val SHOWN_ITEM_COUNT: Int = 5
     val DEFAULT_STRING_PICKER_VALUE: Int = 1
 
     val numbers: ArrayList< Any > = arrayListOf(-5, 3, -15, 7, 4, -50, 2, 70)

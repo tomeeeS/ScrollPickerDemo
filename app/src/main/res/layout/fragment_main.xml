@@ -26,7 +26,6 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:background="@color/pickerBackground"
-            app:isEnabled="@{ viewModel.isEnabled }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent=".43"
@@ -36,6 +35,9 @@
             app:layout_constraintVertical_chainStyle="packed"
             app:selectorColor="@color/selectorColor"
             app:value="@={ viewModel.pickerValue }"
+            app:isEnabled="@{ viewModel.isEnabled }"
+            app:isTextBold="true"
+            app:shownItemCount="5"
             />
 
         <TextView

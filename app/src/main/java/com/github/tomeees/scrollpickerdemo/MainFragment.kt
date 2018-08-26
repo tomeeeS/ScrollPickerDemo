@@ -24,7 +24,6 @@ class MainFragment : Fragment() {
             setLifecycleOwner(this@MainFragment)
 
             scrollPicker = picker.apply {
-                setShownItemCount(viewModel.SHOWN_ITEM_COUNT)
                 setList(viewModel.shownList)
             }
             pager.adapter = ScrollPickerDemoAdapter(this@MainFragment.context!!, scrollPicker, viewModel )
