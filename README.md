@@ -40,6 +40,7 @@ You can set
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
 * Selector style: classic 2 lines, rectangular or filled rectangle.
+* Bold text.
 
 #### You can set an arbitrary list of numbers, not only a positive range
 
