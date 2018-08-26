@@ -10,7 +10,6 @@ The property about which item is selected is called the 'value' of the scroll pi
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
-* Selected index is two-way data-bindable.
 * The item list is data-bindable.
 * isEnabled is data-bindable.
 #### ScrollPicker is customizable
@@ -18,7 +17,6 @@ You can set
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
 * Selector style: classic 2 lines, rectangular or filled rectangle.
-* The selected index in case of ints too.
 
 #### You can set an arbitrary list of numbers, not only a positive range
 
@@ -36,7 +34,7 @@ Then we repeat this test after setting a string list to the picker.
 * Minsdk is 16.  
 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
-* You don't need Java 8, nor kotlin compiler for this as it was written in Java 7.  
+* Purely written in Java 7.  
 * Minsdk is 11.  
 * Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you might have a problem - which can be solved by either using this exact version mentioned OR with gradle dependency constraints as far as I know.
 
