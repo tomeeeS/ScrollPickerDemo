@@ -30,7 +30,7 @@ In your viewmodel you could have
 ```
     var shownList: ObservableField< ArrayList< Any > > = ObservableField() 
 ```
-then in your view controller (fragment, activity, etc):
+then in your view layer (fragment, activity, etc):
 ```
     scrollPicker.setList(viewModel.shownList)
 ```
