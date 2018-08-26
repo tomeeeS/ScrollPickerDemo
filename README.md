@@ -5,7 +5,7 @@ Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/Scro
 ### Similarities with NumberPicker
 * You can set a list of strings or integers for it to display.
 * You can set which item to select from the list. The default is the first one. Then you can scroll it to select other items.  
-The property about which item is selected is called the 'value' of the scroll picker - just as with NumberPickers. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
+The property about which item is selected is called the 'value' of the scroll picker. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
 
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
