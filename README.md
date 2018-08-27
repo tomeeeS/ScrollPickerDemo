@@ -4,7 +4,7 @@ If you'd like to clone just that to change it for your needs, [here](https://git
   
 <p >
   <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
-  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/possibility showcase.png" width="480" /> 
+  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/possibility showcase.png" width="500" /> 
 </p>
 
 ## Functionality
@@ -52,7 +52,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.1.0"
+    implementation "com.github.tomeees:scrollpicker:1.2.0"
     ...
 }
 ```
