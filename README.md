@@ -41,7 +41,7 @@ You can set
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* You can't edit the items in the list with this.
+* The user can't edit the list from the UI.
 
 ## Download
 In module build.gradle:
