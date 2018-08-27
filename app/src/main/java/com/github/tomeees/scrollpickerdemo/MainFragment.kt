@@ -7,14 +7,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.tomeees.scrollpicker.ScrollPicker
 import com.github.tomeees.scrollpickerdemo.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
 
     private val LAYOUT = R.layout.fragment_main
-
-    lateinit var scrollPicker: ScrollPicker
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val viewModel = ViewModelProviders.of(this).get(MainFragmentViewModel::class.java)
@@ -23,10 +20,8 @@ class MainFragment : Fragment() {
             setViewModel(viewModel)
             setLifecycleOwner(this@MainFragment)
 
-            scrollPicker = picker.apply {
-                setList(viewModel.shownList)
-            }
-            pager.adapter = ScrollPickerDemoAdapter(this@MainFragment.context!!, scrollPicker, viewModel )
+            picker.setList(viewModel.shownList)
+            pager.adapter = ScrollPickerDemoAdapter(this@MainFragment.context!!, picker, viewModel )
         }
 
         return binding.root

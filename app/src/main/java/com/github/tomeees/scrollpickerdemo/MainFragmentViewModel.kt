@@ -9,12 +9,12 @@ class MainFragmentViewModel : ViewModel() {
 
     val DEFAULT_STRING_PICKER_VALUE: Int = 1
 
-    val numbers: ArrayList< Any > = arrayListOf(-5, 3, -15, 7, 4, -50, 2, 70)
-    val colors: ArrayList< Any > = arrayListOf("red", "green", "blue", "yellow", "purple", "white", "llama color",
+    val numbers: ArrayList< Int > = arrayListOf(-5, 3, -15, 7, 4, -50, 2, 70)
+    val colors: ArrayList< String > = arrayListOf("red", "green", "blue", "yellow", "purple", "white", "llama color",
             "teal", "black", "pink", "orange", "gold", "aquamarine", "brown", "gray")
     var pickerValue: ObservableInt = ObservableInt()
     var isEnabled: ObservableBoolean = ObservableBoolean(true)
-    var shownList: ObservableField< ArrayList< Any > > = ObservableField()
+    var shownList: ObservableField< Collection< Any > > = ObservableField()
 
     private var showNumbers = true
 
@@ -34,7 +34,7 @@ class MainFragmentViewModel : ViewModel() {
     fun initList() {
         if (showNumbers) {
             shownList.set(numbers)
-            pickerValue.set(numbers[ 1 ] as Int)
+            pickerValue.set(numbers[ 1 ])
         } else {
             shownList.set(colors)
             pickerValue.set(DEFAULT_STRING_PICKER_VALUE)
