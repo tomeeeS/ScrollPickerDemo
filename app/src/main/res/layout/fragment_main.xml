@@ -28,7 +28,7 @@
             android:background="@color/pickerBackground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent=".43"
+            app:layout_constraintHeight_percent=".4"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,6 @@
             app:selectorColor="@color/selectorColor"
             app:value="@={ viewModel.pickerValue }"
             app:isEnabled="@{ viewModel.isEnabled }"
-            app:isTextBold="true"
             app:shownItemCount="5"
             />
 
@@ -74,7 +73,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHeight_percent="0.53"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             >
