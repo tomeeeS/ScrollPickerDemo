@@ -20,9 +20,9 @@ The property about which item is selected is called the 'value' of the scroll pi
 * The item list is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
 In your viewmodel you could have
 ```kotlin
-    var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
+    var shownList: ObservableField< Collection< Any > > = ObservableField()
     val numbers: ArrayList< Int > // here's your data from the model
-    shownList = arrayListOf(numbers) // cast
+    shownList.set(numbers)
 ```
 then in your view layer (fragment, activity, etc):
 ```kotlin
@@ -53,7 +53,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.2.0"
+    implementation "com.github.tomeees:scrollpicker:1.3.0"
     ...
 }
 ```
