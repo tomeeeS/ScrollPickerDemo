@@ -29,7 +29,7 @@ The property about which item is selected is called the 'value' of the scroll pi
 In your viewmodel you could have
 ```
     var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
-    val numbers: ArrayList< Int > // here's your real data from the model
+    val numbers: ArrayList< Int > // here's your data from the model
     shownList = arrayListOf(numbers) // cast
 ```
 then in your view layer (fragment, activity, etc):
