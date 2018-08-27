@@ -28,7 +28,9 @@ The property about which item is selected is called the 'value' of the scroll pi
 * The item list is data-bindable, but you can only set it from code, not from xml due to lack of xml attribute types.  
 In your viewmodel you could have
 ```
-    var shownList: ObservableField< ArrayList< Any > > = ObservableField() 
+    var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
+    val numbers: ArrayList< Int > // here's your real data from the model
+    shownList = arrayListOf(numbers) // cast
 ```
 then in your view layer (fragment, activity, etc):
 ```
