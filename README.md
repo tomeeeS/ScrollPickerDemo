@@ -1,7 +1,7 @@
 # ScrollPickerDemo
-Demo project to showcase and test [ScrollPicker](https://github.com/tomeeeS/ScrollPicker), which is a customizable and data-bindable NumberPicker-like UI element for android.  
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android.  
+If you'd like to clone just that to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
-
 <p float="left">
   <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
   
@@ -25,13 +25,15 @@ The property about which item is selected is called the 'value' of the scroll pi
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
 * isEnabled is data-bindable.
-* The item list is data-bindable, but you can only set it from code, not from xml due to lack of xml attribute types.  
+* The item list is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
 In your viewmodel you could have
-```
-    var shownList: ObservableField< ArrayList< Any > > = ObservableField() 
+```kotlin
+    var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
+    val numbers: ArrayList< Int > // here's your data from the model
+    shownList = arrayListOf(numbers) // cast
 ```
 then in your view layer (fragment, activity, etc):
-```
+```kotlin
     scrollPicker.setList(viewModel.shownList)
 ```
 
@@ -40,6 +42,8 @@ You can set
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
 * Selector style: classic 2 lines, rectangular or filled rectangle.
+* Selector line width.
+* Bold text.
 
 #### You can set an arbitrary list of numbers, not only a positive range
 
@@ -56,24 +60,24 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.0.1"
+    implementation "com.github.tomeees:scrollpicker:1.1.0"
     ...
 }
 ```
     
 ## Dependencies
 
-### The demo part (app module)
-* Written in kotlin 
-* Minsdk is 16.  
-
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
 * Purely written in Java 7.  
 * Minsdk is 11.  
 * Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved either by using this exact version mentioned or with gradle dependency constraints as far as I know.
 
+### The demo part (app module)
+* Written in kotlin 
+* Minsdk is 16.  
+
 ## Tests
-* Setting an int list to the picker, then do successive scrolls on it many times, and do checks on it when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item. We check if the vertical scroll position is perfect (is divisible by the height of one item) and if the value of the picker is correct and also if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
+* Setting an int list to the picker, then perform scrolls on it. Between these scrolls, when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item, we perform the checks on it. We check if the vertical scroll position is perfect (is divisible by the height of one item), if the value of the picker is correct and if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
 Then we repeat this test after setting a string list to the picker.
 
 ## Donation
