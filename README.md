@@ -25,7 +25,7 @@ The property about which item is selected is called the 'value' of the scroll pi
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
 * isEnabled is data-bindable.
-* The item list is data-bindable, but you can only set it from code, not from xml due to lack of xml attribute types.  
+* The item list is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
 In your viewmodel you could have
 ```
     var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
