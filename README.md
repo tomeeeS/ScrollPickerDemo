@@ -37,7 +37,9 @@ You can set
 * Selector line width.
 * Bold text.
 
-#### You can set an arbitrary list of numbers, not only a positive range
+#### Easier usage
+* You can set an arbitrary list of numbers, not only a positive range. No more conversion to strings and giving up of easy handling of int values from the picker is necessary.
+* No setMinValue and setMaxValue call is necessary. Just set your Collection of Ints or Strings and you're set.
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
