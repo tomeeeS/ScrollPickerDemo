@@ -40,6 +40,7 @@ You can set
 #### You can set an arbitrary list of numbers, not only a positive range
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
+* You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
 * You can't edit the items in the list with this.
 
 ## Download
