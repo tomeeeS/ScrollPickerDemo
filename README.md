@@ -12,7 +12,7 @@ If you'd like to clone only the ScrollPicker and not all this demo project to ch
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
 * isEnabled is data-bindable.
-* The item list is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
+* The Collection of items is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
 In your viewmodel you could have
 ```kotlin
     var shownList: ObservableField< Collection< Any > > = ObservableField()
@@ -34,12 +34,12 @@ You can set
 
 #### Ease of use
 * You can set an arbitrary Collection with setList(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
-* A Collection of integers can have arbitrary values and it's not limited to only a range of positives. No more conversion to strings and giving up of easy handling of int values is necessary.
-* No setMinValue and setMaxValue call is necessary. Just set your Collection and you're set.
+* A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
+* No setMinValue and setMaxValue call is necessary. Just set your Collection.
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
-* You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* The user can't edit the list from the UI.
+* You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
+* The user can't edit the items from the UI.
 
 ## Download
 In module build.gradle:
