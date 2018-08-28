@@ -33,7 +33,13 @@ You can set
 * Bold text.
 
 #### <a name="Ease"/>Ease of use
-* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
+* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().  
+So for example all of these work when you give them to setItems(..):  
+```kotlin
+    val numbers: List< Int > = listOf(-5, 3, -15, 7, 4, -50, 2, 70)
+    val dates: ArrayList< Date > = arrayListOf(Date(), Date(), Date())
+    val colors: Set< String > = setOf("red", "green", "blue")
+```
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 
