@@ -20,9 +20,9 @@ The property about which item is selected is called the 'value' of the scroll pi
 * The item list is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
 In your viewmodel you could have
 ```kotlin
-    var shownList: ObservableField< ArrayList< Any > > = ObservableField()  // has to be ArrayList< *Any* >
+    var shownList: ObservableField< Collection< Any > > = ObservableField()
     val numbers: ArrayList< Int > // here's your data from the model
-    shownList = arrayListOf(numbers) // cast
+    shownList.set(numbers)
 ```
 then in your view layer (fragment, activity, etc):
 ```kotlin
@@ -34,14 +34,16 @@ You can set
 * How many items should it display at a time, it's not always only 3 like in the case of NumberPicker.
 * Text size and color for the items, with a possibility to set different values of these for the selected item.
 * Selector style: classic 2 lines, rectangular or filled rectangle.
-* Selector line width.
+* Selector line width. If you set a 0 width, the selector won't be displayed.
 * Bold text.
 
-#### You can set an arbitrary list of numbers, not only a positive range
+#### Easier usage
+* You can set an arbitrary list of numbers, not only a positive range. No more conversion to strings and giving up of easy handling of int values from the picker is necessary.
+* No setMinValue and setMaxValue call is necessary. Just set your Collection of Ints or Strings and you're set.
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* You can't edit the items in the list with this.
+* The user can't edit the list from the UI.
 
 ## Download
 In module build.gradle:
@@ -53,7 +55,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.2.0"
+    implementation "com.github.tomeees:scrollpicker:1.3.0"
     ...
 }
 ```
@@ -70,7 +72,7 @@ dependencies {
 * Minsdk is 16.  
 
 ## Tests
-* Setting an int list to the picker, then perform scrolls on it. Between these scrolls, when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item, we perform the checks on it. We check if the vertical scroll position is perfect (is divisible by the height of one item), if the value of the picker is correct and if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
+* We set an int list to the picker, then perform scrolls on it. Between these scrolls, when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item, we perform the checks on it. We check if the vertical scroll position is perfect (is divisible by the height of one item), if the value of the picker is correct and if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
 Then we repeat this test after setting a string list to the picker.
 
 ## Donation
