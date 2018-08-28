@@ -40,7 +40,10 @@ So for example all of these work when you give them to setItems(..):
     val dates: ArrayList< Date > = arrayListOf(Date(), Date(), Date())
     val colors: Set< String > = setOf("red", "green", "blue")
 ```
-Remember, you can data-bind on these items too if you wrap them into ObservableField.
+Remember, you can data-bind on these collections too if you wrap them into ObservableField thanks to
+```java
+    public void setItems( final ObservableField< ? extends Collection > items )
+```
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 
