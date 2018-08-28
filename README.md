@@ -1,9 +1,9 @@
 # ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android for which you can set an arbitrary Collection to work with. See the [Ease of use](#Ease) section for more info.  
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android that can work with an arbitrary Collection of items. See the [Ease of use](#EaseOfUse) section for more info.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
-  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
+  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo big.gif" width="240" />
   <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/possibility showcase.png" width="500" /> 
 </p>
 
@@ -32,8 +32,18 @@ You can set
 * Selector line width. If you set a 0 width, the selector won't be displayed.
 * Bold text.
 
-#### <a name="Ease"/>Ease of use
-* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
+#### <a name="EaseOfUse"/>Ease of use
+* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().  
+So for example all of these work when you give them to setItems(..):  
+```kotlin
+    val numbers: List< Int > = listOf(-5, 3, -15, 7, 4, -50, 2, 70)
+    val dates: ArrayList< Date > = arrayListOf(Date(), Date(), Date())
+    val colors: Set< String > = setOf("red", "green", "blue")
+```
+Remember, you can data-bind on these collections too if you wrap them into ObservableField thanks to
+```java
+    public void setItems( final ObservableField< ? extends Collection > items )
+```
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 
@@ -51,7 +61,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.4.0"
+    implementation "com.github.tomeees:scrollpicker:1.5.0"
     ...
 }
 ```
