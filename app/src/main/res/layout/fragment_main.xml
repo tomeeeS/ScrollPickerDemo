@@ -37,6 +37,8 @@
             app:value="@={ viewModel.pickerValue }"
             app:isEnabled="@{ viewModel.isEnabled }"
             app:shownItemCount="5"
+            app:isTextBold="true"
+            app:selectorLineWidth="6"
             />
 
         <TextView
