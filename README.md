@@ -1,6 +1,6 @@
 # ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android.  
-If you'd like to clone just that to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android for which you can set an arbitrary Collection to work with. See the 'Ease of use' section for more info.  
+If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
   <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
@@ -8,11 +8,6 @@ If you'd like to clone just that to change it for your needs, [here](https://git
 </p>
 
 ## Functionality
-### Similarities with NumberPicker
-* You can set a list of strings or integers for it to display.
-* You can set which item to select from the list. The default is the first one. Then you can scroll it to select other items.  
-The property about which item is selected is called the 'value' of the scroll picker. If the list we set was such that its items are of String, then the value corresponds to the index of the selected item in the list, while in case of integers it is the item's int value.  
-
 ### Extras not available in NumberPicker
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
@@ -37,9 +32,10 @@ You can set
 * Selector line width. If you set a 0 width, the selector won't be displayed.
 * Bold text.
 
-#### Easier usage
-* You can set an arbitrary list of numbers, not only a positive range. No more conversion to strings and giving up of easy handling of int values from the picker is necessary.
-* No setMinValue and setMaxValue call is necessary. Just set your Collection of Ints or Strings and you're set.
+#### Ease of use
+* You can set an arbitrary Collection with setList(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
+* A Collection of integers can have arbitrary values and it's not limited to only a range of positives. No more conversion to strings and giving up of easy handling of int values is necessary.
+* No setMinValue and setMaxValue call is necessary. Just set your Collection and you're set.
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the list displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
@@ -55,7 +51,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.3.0"
+    implementation "com.github.tomeees:scrollpicker:1.4.0"
     ...
 }
 ```
