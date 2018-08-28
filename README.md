@@ -1,5 +1,5 @@
 # ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android that can work with an arbitrary Collection of items. See the [Ease of use](#Ease) section for more info.  
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android that can work with an arbitrary Collection of items. See the [Ease of use](#EaseOfUse) section for more info.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
@@ -32,7 +32,7 @@ You can set
 * Selector line width. If you set a 0 width, the selector won't be displayed.
 * Bold text.
 
-#### <a name="Ease"/>Ease of use
+#### <a name="EaseOfUse"/>Ease of use
 * You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().  
 So for example all of these work when you give them to setItems(..):  
 ```kotlin
