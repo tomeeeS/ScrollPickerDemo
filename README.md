@@ -3,7 +3,7 @@ Demo project to showcase and test ScrollPicker, a customizable and data-bindable
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
-  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo.gif" width="240" />
+  <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/demo big.gif" width="240" />
   <img src="https://github.com/tomeeeS/ScrollPickerDemo/blob/master/raw/possibility showcase.png" width="500" /> 
 </p>
 
