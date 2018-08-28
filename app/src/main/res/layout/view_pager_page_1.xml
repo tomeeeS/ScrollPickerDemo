@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/valueToFourButton"/>
 
         <Button
-            android:id="@+id/setList"
+            android:id="@+id/setItems"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:onClick="@{ _ -> viewModel.changeList() }"

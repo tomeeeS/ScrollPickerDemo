@@ -20,7 +20,7 @@ class MainFragment : Fragment() {
             setViewModel(viewModel)
             setLifecycleOwner(this@MainFragment)
 
-            picker.setList(viewModel.shownList)
+            picker.setItems(viewModel.shownItems)
             pager.adapter = ScrollPickerDemoAdapter(this@MainFragment.context!!, picker, viewModel )
         }
 

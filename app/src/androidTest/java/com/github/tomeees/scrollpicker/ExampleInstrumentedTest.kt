@@ -46,7 +46,7 @@ class ExampleInstrumentedTest {
     @Test
     fun scrollPickerPositionAndValueAreCorrect_onScroll() {
         testScroll( true )
-        onView(withId(R.id.setList)).perform(click())
+        onView(withId(R.id.setItems)).perform(click())
         testScroll( false )
     }
 

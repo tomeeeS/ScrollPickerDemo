@@ -14,7 +14,7 @@ class MainFragmentViewModel : ViewModel() {
             "teal", "black", "pink", "orange", "gold", "aquamarine", "brown", "gray")
     var pickerValue: ObservableInt = ObservableInt()
     var isEnabled: ObservableBoolean = ObservableBoolean(true)
-    var shownList: ObservableField< Collection< Any > > = ObservableField()
+    var shownItems: ObservableField< Collection< Any > > = ObservableField()
 
     private var whichListToShow = 0
 
@@ -32,7 +32,7 @@ class MainFragmentViewModel : ViewModel() {
     }
 
     fun initList() {
-        shownList.set( when( whichListToShow ) {
+        shownItems.set( when( whichListToShow ) {
             0 -> numbers
             1 -> colors
             else -> dates

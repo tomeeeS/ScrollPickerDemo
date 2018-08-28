@@ -21,7 +21,7 @@ In your viewmodel you could have
 ```
 then in your view layer (fragment, activity, etc):
 ```kotlin
-    scrollPicker.setList(viewModel.shownList)
+    scrollPicker.setItems(viewModel.shownList)
 ```
 
 #### ScrollPicker is customizable
@@ -33,7 +33,7 @@ You can set
 * Bold text.
 
 #### Ease of use
-* You can set an arbitrary Collection with setList(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
+* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection and you're set.
 
