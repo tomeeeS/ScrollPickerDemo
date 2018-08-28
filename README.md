@@ -1,5 +1,5 @@
 # ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android for which you can set an arbitrary Collection to work with. See the 'Ease of use' section for more info.  
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android for which you can set an arbitrary Collection to work with. See the [Ease of use](#Ease) section for more info.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
@@ -32,7 +32,7 @@ You can set
 * Selector line width. If you set a 0 width, the selector won't be displayed.
 * Bold text.
 
-#### Ease of use
+#### <a name="Ease"/>Ease of use
 * You can set an arbitrary Collection with setList(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
