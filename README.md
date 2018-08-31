@@ -71,7 +71,7 @@ dependencies {
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
 * Purely written in Java 7.  
 * Minsdk is 11.  
-* Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved either by using this exact version mentioned or with gradle dependency constraints as far as I know.
+* Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved by using this exact version.
 
 ### The demo part (app module)
 * Written in kotlin 
