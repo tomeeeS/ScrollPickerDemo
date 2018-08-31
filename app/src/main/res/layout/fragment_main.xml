@@ -39,6 +39,7 @@
             app:shownItemCount="5"
             app:isTextBold="true"
             app:selectorLineWidth="6"
+            app:font="@style/MyCustomStyle"
             />
 
         <TextView
