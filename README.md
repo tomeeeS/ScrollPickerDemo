@@ -82,15 +82,14 @@ dependencies {
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
 * Purely written in Java 7.  
 * Minsdk is 11.  
-* Android support library: Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved either by   
-1. Using this exact version (I use this because this one's the latest so when someone needs the most recent functionalities in lower SDK levels too, they will need this) You'll need the level 28 Android SDK to use it and set it as target.  So compileSdkVersion = targetSdkVersion = 28.  
-2. Or, if you need to use another version you could set this library's dependencies to non-transitive by including it like this instead:  
-```
-    ...
-    implementation (group: 'com.github.tomeees', name: 'scrollpicker', version: "$scrollpickerVersion") {
-        transitive = false
-    }
-```
+* Android support library: Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved either by using this exact version. I use this because this one's the latest so when someone needs compatibility of the most recent functionalities, they will need this. You'll need the level 28 Android SDK to use it and set it as target.  So compileSdkVersion = targetSdkVersion = 28.  
+    If another of your libraries needs a different version you could set that library's dependencies to non-transitive by including them like this instead:  
+    ```
+        ...
+        implementation (group: 'groupId', name: 'libraryName', version: 'libVersion') {
+            transitive = false
+        }
+    ```
 * AutoFitTextView: com.github.AndroidDeveloperLB:AutoFitTextView:4  
 
 ### The demo part (app module, it will Not be a dependency for you if you use ScrollPicker in your project)
