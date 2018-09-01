@@ -79,14 +79,14 @@ dependencies {
     
 ## Dependencies
 
-### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
+### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
 * Purely written in Java 7.  
 * Minsdk is 11.  
 * Android support library: Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved by using this exact version. I use this because this one's the latest so when someone needs the most recent functionalities in lower SDK levels too, they will need this. You'll need the level 28 Android SDK to use it and set it as target.  So compileSdkVersion = targetSdkVersion = 28.
 * AutoFitTextView: com.github.AndroidDeveloperLB:AutoFitTextView:4  
 
-### The demo part (app module)
-* Written in kotlin 
+### The demo part (app module, it will Not be a dependency for you if you use ScrollPicker in your project)
+* Written in kotlin  
 * Minsdk is 16.  
 
 ## Tests
