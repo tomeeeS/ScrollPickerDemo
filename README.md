@@ -46,12 +46,23 @@ Remember, you can data-bind on these collections too if you wrap them into Obser
 ```
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
+* Uses AutoResizeTextView so texts that would otherwise be too long are also displayed in a decent way.
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
 * The user can't edit the items from the UI.
 
 ## Download
+In project build.gradle:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" } // AutoFitTextView needs this
+    }
+}
+```
+   
 In module build.gradle:
 ```
 repositories {
@@ -61,7 +72,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.5.0"
+    implementation "com.github.tomeees:scrollpicker:1.6.0"
     ...
 }
 ```
@@ -71,7 +82,8 @@ dependencies {
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module, which will be your only dependency from here if you include it in your project)
 * Purely written in Java 7.  
 * Minsdk is 11.  
-* Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved by using this exact version.
+* Android support library: Uses com.android.support:appcompat-v7:28.0.0-rc01 version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved by using this exact version. I use this because this one's the latest so when someone needs the most recent functionalities in lower SDK levels too, they will need this. You'll need the level 28 Android SDK to use it and set it as target.  So compileSdkVersion = targetSdkVersion = 28.
+* AutoFitTextView: com.github.AndroidDeveloperLB:AutoFitTextView:4  
 
 ### The demo part (app module)
 * Written in kotlin 
