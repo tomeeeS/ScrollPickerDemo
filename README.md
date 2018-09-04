@@ -52,6 +52,8 @@ Remember, you can data-bind on these collections too if you wrap them into Obser
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
 * The user can't edit the items from the UI.
 
+## [JavaDoc page](https://tomeees.github.io/)
+
 ## Download
 In project build.gradle:
 ```
@@ -76,8 +78,6 @@ dependencies {
     ...
 }
 ```
-## [JavaDoc page](https://tomeees.github.io/)
-
 ## Dependencies
 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
