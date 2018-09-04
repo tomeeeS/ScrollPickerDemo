@@ -76,7 +76,8 @@ dependencies {
     ...
 }
 ```
-    
+## [JavaDoc page](https://tomeees.github.io/)
+
 ## Dependencies
 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
