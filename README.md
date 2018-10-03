@@ -1,5 +1,6 @@
 # ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android that can work with an arbitrary Collection of items. See the [Ease of use](#EaseOfUse) section for more info.  
+Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android.  
+Can work with an arbitrary Collection of items. See the [Ease of use](#EaseOfUse) section for more info about that.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
