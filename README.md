@@ -44,6 +44,7 @@ Remember, you can data-bind on these collections too if you wrap them into Obser
 ```java
     public void setItems( final ObservableField< ? extends Collection > items )
 ```
+Or you can use setItemsIntRange( int fromInclusive, int toInclusive ) to set int ranges more easily.
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 * Uses AutoResizeTextView so texts that would otherwise be too long are also displayed in a decent way.
@@ -51,6 +52,9 @@ Remember, you can data-bind on these collections too if you wrap them into Obser
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
 * The user can't edit the items from the UI.
+
+## Error handling
+Be careful when using setValue or setting a data-binded value variable because if it's invalid ScrollPicker throws a RuntimeException.
 
 ## [JavaDoc page](https://tomeees.github.io/)
 
@@ -74,7 +78,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.6.3"
+    implementation "com.github.tomeees:scrollpicker:1.7.0"
     ...
 }
 ```
