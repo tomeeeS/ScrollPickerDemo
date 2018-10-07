@@ -78,7 +78,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.7.0"
+    implementation "com.github.tomeees:scrollpicker:1.7.1"
     ...
 }
 ```
