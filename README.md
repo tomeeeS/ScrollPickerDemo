@@ -11,22 +11,8 @@ If you'd like to clone only the ScrollPicker and not all this demo project to ch
 ## Functionality
 ### Extras not available in NumberPicker
 #### Fixes NumberPicker bugs
-* When NumberPicker's height is too short, it renders the separator lines on top of the first and third items. ScrollPicker's separators always stay where they should be. They know their place. Good doggies.
-
-#### Data binding! - get automatic syncronization with your ViewModel data
-* Value is two-way data-bindable.
-* isEnabled is data-bindable.
-* The Collection of items is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
-In your viewmodel you could have
-```kotlin
-    var shownList: ObservableField< Collection< Any > > = ObservableField()
-    val numbers: ArrayList< Int > // here's your data from the model
-    shownList.set(numbers)
-```
-then in your view layer (fragment, activity, etc):
-```kotlin
-    scrollPicker.setItems(viewModel.shownList)
-```
+* When NumberPicker's height is too short, it renders the separator lines on top of the first and third items.  
+Whereas ScrollPicker's separators always stay where they should be. They know their place. Good doggies.
 
 #### ScrollPicker is customizable
 You can set  
@@ -53,12 +39,27 @@ Or you can use setItemsIntRange( int fromInclusive, int toInclusive ) to set int
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 * Uses AutoResizeTextView so texts that would otherwise be too long are also displayed in a decent way.
 
+#### Data binding! - get automatic syncronization with your ViewModel data
+* Value is two-way data-bindable.
+* isEnabled is data-bindable.
+* The Collection of items is data-bindable, but you can only set it from code, not from xml due to lack of possible xml attribute types.  
+In your viewmodel you could have
+```kotlin
+    var shownList: ObservableField< Collection< Any > > = ObservableField()
+    val numbers: ArrayList< Int > // here's your data from the model
+    shownList.set(numbers)
+```
+then in your view layer (fragment, activity, etc):
+```kotlin
+    scrollPicker.setItems(viewModel.shownList)
+```
+
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* The user can't edit the items from the UI.
+* The user can't edit the items from the UI. But you didn't do that anyway.
 
 ## Error handling
-Be careful when using setValue or setting a data-binded value variable because if it's invalid ScrollPicker throws a RuntimeException.
+ScrollPicker throws a RuntimeException on setting an invalid value that isn't in the collection.
 
 ## [JavaDoc page](https://tomeees.github.io/)
 
