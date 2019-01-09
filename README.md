@@ -1,5 +1,6 @@
-# ScrollPickerDemo
-Demo project to showcase and test ScrollPicker, a customizable and data-bindable NumberPicker-like UI element for android that can work with an [arbitrary Collection](#EaseOfUse) of items.  
+# ScrollPicker: A better Android NumberPicker
+Stop using clunky ole' NumberPicker and say hello to ease and joy!  
+This is a demo project to showcase and test ScrollPicker, a customizable and data-bindable UI element for android that picks an item from a collection. It can work with an [arbitrary Collection](#EaseOfUse) of items. It does not have the bugs of NumberPicker and it's much more convenient to use.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
 <p >
@@ -9,6 +10,9 @@ If you'd like to clone only the ScrollPicker and not all this demo project to ch
 
 ## Functionality
 ### Extras not available in NumberPicker
+#### Fixes NumberPicker bugs
+* When NumberPicker's height is too short, it renders the separator lines on top of the first and third items. ScrollPicker's separators always stay where they should be. They know their place. Good doggies.
+
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
 * isEnabled is data-bindable.
@@ -33,7 +37,7 @@ You can set
 * Bold text.
 
 #### <a name="EaseOfUse"/>Ease of use
-* You can set an arbitrary Collection with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().  
+* You can set an arbitrary JVM Collection (List, Set, etc) with setItems(..). In case of Ints the value you'll get back will be the selected int item itself, in the other cases it will be the item's index and the items will be displayed with toString().  
 So for example all of these work when you give them to setItems(..):  
 ```kotlin
     val numbers: List< Int > = listOf(-5, 3, -15, 7, 4, -50, 2, 70)
