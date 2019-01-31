@@ -1,5 +1,4 @@
 # ScrollPicker: A better Android NumberPicker
-Stop using clunky ole' NumberPicker and say hello to ease and joy!  
 This is a demo project to showcase and test ScrollPicker, a customizable and data-bindable UI element for android that picks an item from a collection. It can work with an [arbitrary Collection](#EaseOfUse) of items. It does not have the bugs of NumberPicker and it's much more convenient to use.  
 If you'd like to clone only the ScrollPicker and not all this demo project to change it for your needs, [here](https://github.com/tomeeeS/ScrollPicker) is the droid you're looking for.
   
@@ -13,6 +12,7 @@ If you'd like to clone only the ScrollPicker and not all this demo project to ch
 #### Fixes NumberPicker bugs
 * When NumberPicker's height is too short, it renders the separator lines on top of the first and third items.  
 Whereas ScrollPicker's separators always stay where they should be. They know their place. Good doggies.
+* There's also a couple of other bugs I saw in stackoverflow questions. ScrollPicker does not have them.
 
 #### ScrollPicker is customizable
 You can set  
