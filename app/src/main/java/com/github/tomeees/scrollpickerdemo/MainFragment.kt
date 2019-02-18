@@ -1,24 +1,23 @@
 package com.github.tomeees.scrollpickerdemo
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.github.tomeees.scrollpickerdemo.databinding.FragmentMainBinding
 
-class MainFragment : Fragment() {
+class MainFragment : androidx.fragment.app.Fragment() {
 
-    private val LAYOUT = R.layout.fragment_main
+    private val layout = R.layout.fragment_main
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val viewModel = ViewModelProviders.of(this).get(MainFragmentViewModel::class.java)
 
-        val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater, LAYOUT, container, false).apply {
+        val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater, layout, container, false).apply {
             setViewModel(viewModel)
-            setLifecycleOwner(this@MainFragment)
+            lifecycleOwner = this@MainFragment
 
             picker.setItems(viewModel.shownItems)
 //            picker.setItemsIntRange( 0, 2 )

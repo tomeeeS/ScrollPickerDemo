@@ -1,17 +1,18 @@
 package com.github.tomeees.scrollpicker
 
 import android.os.SystemClock
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.action.ViewActions
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.BoundedMatcher
-import android.support.test.espresso.matcher.ViewMatchers.withContentDescription
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.rule.ActivityTestRule
-import android.support.test.runner.AndroidJUnit4
 import android.view.View
+import androidx.test.InstrumentationRegistry
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.BoundedMatcher
+import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.rule.ActivityTestRule
+import androidx.test.runner.AndroidJUnit4
 import com.github.tomeees.scrollpickerdemo.MainActivity
 import com.github.tomeees.scrollpickerdemo.MainFragmentViewModel
 import com.github.tomeees.scrollpickerdemo.R
@@ -93,7 +94,8 @@ class ScrollPickerInstrumentedTest {
     @Test
     fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
         onView(withId(R.id.setTextSize)).perform(click())
-        scrollPicker.check(matches(withScrollPickerFontSize(22f)))
+        val expectedTextSize = InstrumentationRegistry.getTargetContext().resources.getDimension(R.dimen.bigger_text_size)
+        scrollPicker.check(matches(withScrollPickerFontSize(expectedTextSize)))
     }
 
     fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {

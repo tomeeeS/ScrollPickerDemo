@@ -1,14 +1,14 @@
 package com.github.tomeees.scrollpickerdemo
 
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
-import android.databinding.ObservableInt
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
+import androidx.lifecycle.ViewModel
 import java.util.*
 
 class MainFragmentViewModel : ViewModel() {
 
-    val numbers: List< Int > = listOf(-5, 3, -15, 7, 4, -50, 2, 70)
+    val numbers: List< Int > = listOf(-5, 3, -15, 7, 4, -50, 2, 70, 0, -114, -2, 93)
     val dates: ArrayList< Date > = arrayListOf( Date(), Date(), Date() )
     val colors: Set< String > = setOf("red", "green", "blue", "yellow", "purple", "white", "llama color",
             "teal", "black", "pink", "orange", "gold", "aquamarine", "brown", "gray")

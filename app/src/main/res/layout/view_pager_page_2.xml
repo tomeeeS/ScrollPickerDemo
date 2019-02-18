@@ -10,7 +10,7 @@
             type="com.github.tomeees.scrollpickerdemo.MainFragmentViewModel"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/page2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -210,5 +210,5 @@
             app:layout_constraintTop_toBottomOf="@+id/shownItemCount"
             />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,20 +1,20 @@
 package com.github.tomeees.scrollpickerdemo
 
 import android.content.Context
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.graphics.Color
-import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.github.tomeees.scrollpicker.ScrollPicker
 import com.github.tomeees.scrollpicker.SelectorStyle
 import com.github.tomeees.scrollpickerdemo.databinding.ViewPagerPage1Binding
 import com.github.tomeees.scrollpickerdemo.databinding.ViewPagerPage2Binding
 import java.util.*
 
-class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPicker, val mainFragmentViewModel: MainFragmentViewModel) : PagerAdapter() {
+class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPicker, val mainFragmentViewModel: MainFragmentViewModel)
+    : androidx.viewpager.widget.PagerAdapter() {
 
     val LAYOUT_PAGE_1 = R.layout.view_pager_page_1
     val LAYOUT_PAGE_2 = R.layout.view_pager_page_2
@@ -48,18 +48,18 @@ class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPic
                 LAYOUT_PAGE_2,
                 container,
                 false).apply {
-            setViewModel(mainFragmentViewModel)
-            selectorStyle1.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE_FILLED ) }
-            selectorStyle2.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE ) }
-            selectorStyle3.setOnClickListener { _ -> scrollPicker.setSelectorStyle( SelectorStyle.CLASSIC ) }
+            viewModel = mainFragmentViewModel
+            selectorStyle1.setOnClickListener { scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE_FILLED ) }
+            selectorStyle2.setOnClickListener { scrollPicker.setSelectorStyle( SelectorStyle.RECTANGLE ) }
+            selectorStyle3.setOnClickListener { scrollPicker.setSelectorStyle( SelectorStyle.CLASSIC ) }
 
-            shownItemCount1.setOnClickListener { _ -> scrollPicker.setShownItemCount( 3 ) }
-            shownItemCount2.setOnClickListener { _ -> scrollPicker.setShownItemCount( 5 ) }
-            shownItemCount3.setOnClickListener { _ -> scrollPicker.setShownItemCount( 6 ) }
-            shownItemCount4.setOnClickListener { _ -> scrollPicker.setShownItemCount( 7 ) }
+            shownItemCount1.setOnClickListener { scrollPicker.setShownItemCount( 3 ) }
+            shownItemCount2.setOnClickListener { scrollPicker.setShownItemCount( 5 ) }
+            shownItemCount3.setOnClickListener { scrollPicker.setShownItemCount( 6 ) }
+            shownItemCount4.setOnClickListener { scrollPicker.setShownItemCount( 7 ) }
 
-            selectedItemTextColor.setOnClickListener { _ -> scrollPicker.setSelectedTextColor(getRandomColor()) }
-            setSelectedTextSize.setOnClickListener { _ -> scrollPicker.setSelectedTextSize(24f) }
+            selectedItemTextColor.setOnClickListener { scrollPicker.setSelectedTextColor(getRandomColor()) }
+            setSelectedTextSize.setOnClickListener { scrollPicker.setSelectedTextSize(24f) }
         }
     }
 
@@ -68,17 +68,17 @@ class ScrollPickerDemoAdapter( val context: Context, val scrollPicker: ScrollPic
                 LAYOUT_PAGE_1,
                 container,
                 false).apply {
-            setViewModel(mainFragmentViewModel)
-            selectorColor.setOnClickListener { _ -> scrollPicker.setSelectorColor(getRandomColor()) }
-            textColor.setOnClickListener { _ -> scrollPicker.setTextColor(getRandomColor()) }
-            setTextSize.setOnClickListener { _ -> scrollPicker.setTextSize(20f) }
+            viewModel = mainFragmentViewModel
+            selectorColor.setOnClickListener { scrollPicker.setSelectorColor(getRandomColor()) }
+            textColor.setOnClickListener { scrollPicker.setTextColor(getRandomColor()) }
+            setTextSize.setOnClickListener { scrollPicker.textSize = context.resources.getDimension(R.dimen.bigger_text_size) }
         }
     }
 
     fun getRandomColor(): Int {
         val rnd = Random()
-        val color = Color.argb(COLOR_MAX_ALPHA, rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND), rnd.nextInt(COLOR_RANDOM_INT_BOUND))
-        return color
+        fun randomColorChannelValue() = rnd.nextInt(COLOR_RANDOM_INT_BOUND)
+        return Color.argb(COLOR_MAX_ALPHA, randomColorChannelValue(), randomColorChannelValue(), randomColorChannelValue())
     }
 
     override fun destroyItem(collection: ViewGroup, position: Int, view: Any) {
