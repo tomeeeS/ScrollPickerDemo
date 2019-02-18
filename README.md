@@ -30,7 +30,7 @@ So for example all of these work when you give them to setItems(..):
     val dates: ArrayList< Date > = arrayListOf(Date(), Date(), Date())
     val colors: Set< String > = setOf("red", "green", "blue")
 ```
-Remember, you can data-bind on these collections too if you wrap them into ObservableField thanks to
+You can data-bind on these collections too if you wrap them into ObservableField thanks to
 ```java
     public void setItems( final ObservableField< ? extends Collection > items )
 ```
@@ -56,7 +56,7 @@ then in your view layer (fragment, activity, etc):
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* The user can't edit the items from the UI. But you didn't do that anyway.
+* The user can't edit the items from the UI. 
 
 ## Error handling
 ScrollPicker throws a RuntimeException on setting an invalid value that isn't in the collection.
