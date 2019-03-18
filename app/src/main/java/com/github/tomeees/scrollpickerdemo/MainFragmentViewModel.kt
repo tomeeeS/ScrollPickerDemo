@@ -27,7 +27,8 @@ class MainFragmentViewModel : ViewModel() {
     }
 
     fun changeList() {
-        whichListToShow = if( whichListToShow == 2 ) 0 else whichListToShow + 1
+        whichListToShow =   if( whichListToShow == 2 ) 0
+                            else whichListToShow + 1
         initList()
     }
 
