@@ -30,7 +30,7 @@ So for example all of these work when you give them to setItems(..):
     val dates: ArrayList< Date > = arrayListOf(Date(), Date(), Date())
     val colors: Set< String > = setOf("red", "green", "blue")
 ```
-Remember, you can data-bind on these collections too if you wrap them into ObservableField thanks to
+You can data-bind on these collections too if you wrap them into ObservableField thanks to
 ```java
     public void setItems( final ObservableField< ? extends Collection > items )
 ```
@@ -56,7 +56,7 @@ then in your view layer (fragment, activity, etc):
 
 ### Stuff that NumberPicker can do but ScrollPicker can't
 * You can't have the items displayed in a loop (like as with wrapSelectorWheel in NumberPicker).
-* The user can't edit the items from the UI. But you didn't do that anyway.
+* The user can't edit the items from the UI. 
 
 ## Error handling
 ScrollPicker throws a RuntimeException on setting an invalid value that isn't in the collection.
@@ -83,7 +83,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.7.1"
+    implementation "com.github.tomeees:scrollpicker:1.7.2"
     ...
 }
 ```
@@ -92,7 +92,6 @@ dependencies {
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
 * Purely written in Java 7.  
 * Minsdk is 11.  
-* Android support library: Uses __com.android.support:appcompat-v7:28.0.0__ version of the v7 support lib. If you use another support lib version in your app you will have a problem - which can be solved by using this exact version. I use this because it's the latest so when someone needs compatibility of the most recent functionalities, they will need this. You'll need the level 28 Android SDK to use it and set it as target.  So compileSdkVersion = targetSdkVersion = 28.  
 * AutoResizeTextView: com.github.AndroidDeveloperLB:AutoFitTextView:4  
 
 ### The demo part (app module, it will Not be a dependency for you if you use ScrollPicker in your project)
