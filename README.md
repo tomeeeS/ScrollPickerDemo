@@ -38,6 +38,8 @@ Or you can use setItemsIntRange( int fromInclusive, int toInclusive ) to set int
 * A Collection of integers can have arbitrary values and it's not limited to only a range of positives as with NumberPicker. No more conversion to strings and giving up of easy handling of int values is necessary.
 * No setMinValue and setMaxValue call is necessary. Just set your Collection.
 * Uses AutoResizeTextView so texts that would otherwise be too long are also displayed in a decent way.
+* Scrolls much more conveniently than NumberPicker. You can scroll 300 items in one big velocity motion. 
+* Using the one-item-up or one-item-down functionality - by tapping above or below the area with the selector - is more comfy: when you do it multiple times without waiting until the selection animation is finished all taps are accounted for and it will go down or up in the list as many times as you tapped (instead of just acting weird in case of NumberPicker), and you can use it while scrolling too.
 
 #### Data binding! - get automatic syncronization with your ViewModel data
 * Value is two-way data-bindable.
