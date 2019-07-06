@@ -89,6 +89,19 @@ dependencies {
     ...
 }
 ```
+
+## Donation
+If you found it useful, please consider donating. Thank you!  
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6B7WYZW78DBS2)
+
+## Cloning and trying out this project
+This repository has a subrepo in the form of ScrollPicker, which is a module of the Android project and resides in the 'scroll_picker' folder. It is therefore not as easy as the average project to just clone this thing. Follow these steps:
+1. git clone https://github.com/tomeeeS/ScrollPickerDemo  
+2. change directory to ...ScrollPickerDemo/scroll_picker  
+3. execute the following command and notice the dot (.) at the end, which means to not make a top level folder with the project name ScrollPicker, but copy the code directly under the scroll_picker folder:  git clone https://github.com/tomeeeS/ScrollPicker .  
+4. in android studio: add configuration > Add new configuration > module: app  
+
 ## Dependencies
 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
@@ -103,8 +116,3 @@ dependencies {
 ## Tests
 * We set an int list to the picker, then perform scrolls on it. Between these scrolls, when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item, we perform the checks on it. We check if the vertical scroll position is perfect (is divisible by the height of one item), if the value of the picker is correct and if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
 Then we repeat this test after setting a string list to the picker.
-
-## Donation
-If you found it useful, please consider donating. Thank you!  
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6B7WYZW78DBS2)
