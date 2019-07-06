@@ -85,7 +85,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.7.2"
+    implementation "com.github.tomeees:scrollpicker:1.7.3"
     ...
 }
 ```
@@ -100,7 +100,6 @@ This repository has a subrepo in the form of ScrollPicker, which is a module of 
 1. git clone https://github.com/tomeeeS/ScrollPickerDemo  
 2. change directory to ...ScrollPickerDemo/scroll_picker  
 3. execute the following command and notice the dot (.) at the end, which means to not make a top level folder with the project name ScrollPicker, but copy the code directly under the scroll_picker folder:  git clone https://github.com/tomeeeS/ScrollPicker .  
-4. in android studio: add configuration > Add new configuration > module: app  
 
 ## Dependencies
 
