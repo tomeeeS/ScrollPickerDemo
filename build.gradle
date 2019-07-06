@@ -1,5 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     ext {
         // Sdk and tools
@@ -10,21 +8,21 @@ buildscript {
         // App dependencies
         supportLibraryVersion = '1.0.0'
         constraintLayoutVersion = '1.1.3'
-        espressoVersion = '3.1.0-alpha4'
+        espressoVersion = '3.3.0-alpha01'
         glideVersion = '4.4.0'
         gradlePluginVersion = '3.2.0-beta05'
         gsonVersion = '2.8.2'
         junitVersion = '4.12'
         lifecycleVersion = '1.1.1'
         navigationVersion = '1.0.0-alpha04'
-        kotlinVersion = '1.3.21'
+        kotlinVersion = '1.3.41'
         ktlintVersion = '0.24.0'
         ktxVersion = '1.0.1'
         roomVersion = '1.1.1'
         runnerVersion = '1.0.1'
-        workVersion = '1.0.0'
+        workVersion = '1.0.1'
         navigation_ktx_version = 'ktx:1.0.0-alpha04'
-        gradleVersion = '3.3.2'
+        gradleVersion = '3.4.1'
     }
 
 
@@ -33,7 +31,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "com.android.tools.build:gradle:${gradleVersion}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
@@ -48,5 +46,10 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
     }
 }
