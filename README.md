@@ -96,7 +96,7 @@ If you found it useful, please consider donating. Thank you!
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6B7WYZW78DBS2)
 
 ## Cloning and trying out this project
-This repository has a subrepo in the form of ScrollPicker, which is a module of the Android project and resides in the 'scroll_picker' folder. It is therefore not as easy as the average project to just clone this thing. Follow these steps:
+This repository has a subrepo in the form of ScrollPicker, which is a module of the Android project and resides in the 'scroll_picker' folder. Follow these steps to clone this project:
 1. git clone https://github.com/tomeeeS/ScrollPickerDemo  
 2. change directory to ...ScrollPickerDemo/scroll_picker  
 3. execute the following command and notice the dot (.) at the end, which means to not make a top level folder with the project name ScrollPicker, but copy the code directly under the scroll_picker folder:  git clone https://github.com/tomeeeS/ScrollPicker .  
