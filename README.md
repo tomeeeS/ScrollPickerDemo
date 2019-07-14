@@ -115,3 +115,6 @@ This repository has a subrepo in the form of ScrollPicker, which is a module of 
 ## Tests
 * We set an int list to the picker, then perform scrolls on it. Between these scrolls, when it becomes stationary after it does the correction scroll to be in a perfect position selecting an item, we perform the checks on it. We check if the vertical scroll position is perfect (is divisible by the height of one item), if the value of the picker is correct and if the content description is correct (it's the selected item's displayed String 'value') for accessibility.  
 Then we repeat this test after setting a string list to the picker.
+
+## Licence: 
+Apache-2.0 (do with it whatever you please)
