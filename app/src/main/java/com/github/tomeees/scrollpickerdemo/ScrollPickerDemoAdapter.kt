@@ -61,7 +61,7 @@ class ScrollPickerDemoAdapter(private val context: Context
             shownItemCount4.setOnClickListener { scrollPicker.setShownItemCount( 7 ) }
 
             selectedItemTextColor.setOnClickListener { scrollPicker.setSelectedTextColor(getRandomColor()) }
-            setSelectedTextSize.setOnClickListener { scrollPicker.setSelectedTextSize(24f) }
+            setSelectedTextSize.setOnClickListener { scrollPicker.setSelectedTextSize(26f) }
         }
     }
 
@@ -73,7 +73,7 @@ class ScrollPickerDemoAdapter(private val context: Context
             viewModel = mainFragmentViewModel
             selectorColor.setOnClickListener { scrollPicker.setSelectorColor(getRandomColor()) }
             textColor.setOnClickListener { scrollPicker.setTextColor(getRandomColor()) }
-            setTextSize.setOnClickListener { scrollPicker.textSize = context.resources.getDimension(R.dimen.bigger_text_size) }
+            setTextSize.setOnClickListener { scrollPicker.textSize = 20f }
         }
     }
 

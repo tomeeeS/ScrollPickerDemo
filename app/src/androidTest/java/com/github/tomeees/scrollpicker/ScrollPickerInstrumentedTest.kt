@@ -2,7 +2,6 @@ package com.github.tomeees.scrollpicker
 
 import android.os.SystemClock
 import android.view.View
-import androidx.test.InstrumentationRegistry
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions
@@ -11,8 +10,9 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
 import com.github.tomeees.scrollpickerdemo.MainActivity
 import com.github.tomeees.scrollpickerdemo.MainFragmentViewModel
 import com.github.tomeees.scrollpickerdemo.R
@@ -27,7 +27,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ScrollPickerInstrumentedTest {
 
-    lateinit var scrollPicker: ViewInteraction
+    private lateinit var scrollPicker: ViewInteraction
 
     @get:Rule
     val activityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
@@ -51,8 +51,8 @@ class ScrollPickerInstrumentedTest {
         testScroll( false )
     }
 
-    fun testScroll(isNumeric: Boolean) {
-        for(i in 1..20) {
+    private fun testScroll(isNumeric: Boolean) {
+        for(i in 1..50) {
             scrollPicker.perform(if(i % 2 == 0) ViewActions.swipeUp() else ViewActions.swipeDown()) // we do swipe downs and swipe ups in succession
             SystemClock.sleep(1000) // wait until animations are surely finished
             scrollPicker.check(matches(withScrollPicker_ScrollYAndValueAndContentDescription_AreCorrect(isNumeric)))
@@ -73,13 +73,13 @@ class ScrollPickerInstrumentedTest {
                 if (target !is ScrollPicker) {
                     return false
                 }
-                scrollY = target.getListScrollY()
+                scrollY = target.listScrollY
                 cellHeight = target.cellHeight
                 previousCellsCount = scrollY / cellHeight
                 pickerValue = target.value
                 scrollYError = scrollY % cellHeight
                 val isValueCorrect = if( isNumeric ) pickerValue == numbers[ previousCellsCount ] else pickerValue == previousCellsCount
-                val isContentDescriptionCorrect = target.contentDescription == target.items.get(target.selectedIndex).toString()
+                val isContentDescriptionCorrect = target.contentDescription == target.items[target.selectedIndex].toString()
                 return scrollYError == 0 && isValueCorrect && isContentDescriptionCorrect
             }
 
@@ -94,20 +94,18 @@ class ScrollPickerInstrumentedTest {
     @Test
     fun scrollPickersItemTextSizeIsCorrect_onButtonPush() {
         onView(withId(R.id.setTextSize)).perform(click())
-        val expectedTextSize = InstrumentationRegistry.getTargetContext().resources.getDimension(R.dimen.bigger_text_size)
+        val expectedTextSize = InstrumentationRegistry.getInstrumentation().targetContext.resources.getDimension(R.dimen.bigger_text_size)
         scrollPicker.check(matches(withScrollPickerFontSize(expectedTextSize)))
     }
 
-    fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {
+    private fun withScrollPickerFontSize(expectedSize: Float): Matcher<View> {
         return object : BoundedMatcher<View, View>(View::class.java) {
 
             public override fun matchesSafely(target: View): Boolean {
                 if (target !is ScrollPicker) {
                     return false
                 }
-                val targetScrollPicker = target
-                val textSize = targetScrollPicker.getTextSize()
-                return textSize.compareTo(expectedSize) == 0
+                return target.getTextSize().compareTo(expectedSize) == 0
             }
 
             override fun describeTo(description: Description) {
