@@ -65,17 +65,7 @@ ScrollPicker throws a RuntimeException on setting an invalid value that isn't in
 
 ## [JavaDoc page](https://tomeees.github.io/)
 
-## Download
-In project build.gradle:
-```
-allprojects {
-    repositories {
-        ...
-        maven { url "https://jitpack.io" } // AutoFitTextView needs this
-    }
-}
-```
-   
+## Usage
 In module build.gradle:
 ```
 repositories {
@@ -85,7 +75,7 @@ repositories {
 ...
 
 dependencies {
-    implementation "com.github.tomeees:scrollpicker:1.7.3"
+    implementation "com.github.tomeees:scrollpicker:1.7.4"
     ...
 }
 ```
@@ -106,7 +96,6 @@ This repository has a subrepo in the form of ScrollPicker, which is a module of 
 ### [ScrollPicker](https://github.com/tomeeeS/ScrollPicker) (scroll_picker library module)
 * Purely written in Java 7.  
 * Minsdk is 11.  
-* AutoResizeTextView: com.github.AndroidDeveloperLB:AutoFitTextView:4  
 
 ### The demo part (app module, it will Not be a dependency for you if you use ScrollPicker in your project)
 * Written in kotlin  
