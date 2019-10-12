@@ -9,7 +9,7 @@ android {
         config {
             keyAlias 'alias_name'
             keyPassword 'spdemo'
-            storeFile file('C:/Users/sajti/workspace/Android/ScrollPickerDemo/key0.keystore')
+            storeFile file('../key0.keystore')
             storePassword 'spdemo'
         }
     }
@@ -28,7 +28,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
-            proguardFile 'C:/Users/sajti/workspace/Android/ScrollPickerDemo/app/proguard-rules.pro'
+            proguardFile '../app/proguard-rules.pro'
         }
     }
     dataBinding {
@@ -47,9 +47,11 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$rootProject.supportLibraryVersion"
     implementation "com.google.android.material:material:$rootProject.supportLibraryVersion"
     // Testing dependencies
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-    testImplementation "junit:junit:$rootProject.junitVersion"
+
+
     implementation project(path: ':scroll_picker')
 }
