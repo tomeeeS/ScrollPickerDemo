@@ -22,7 +22,7 @@ buildscript {
         runnerVersion = '1.0.1'
         workVersion = '1.0.1'
         navigation_ktx_version = 'ktx:1.0.0-alpha04'
-        gradleVersion = '3.5.1'
+        gradleVersion = '3.5.2'
     }
 
 

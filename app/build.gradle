@@ -38,6 +38,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':scroll_picker')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "android.arch.work:work-runtime-ktx:$rootProject.workVersion"
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
@@ -51,7 +53,4 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-
-
-    implementation project(path: ':scroll_picker')
 }
